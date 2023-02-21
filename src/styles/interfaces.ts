@@ -13,6 +13,7 @@ export interface PropsContainer {
   export interface PropsDescription {
     bottom?: string;
     width?: string;
+    textAlign?:string;
   }
 export interface FormProps{
   border:string;

@@ -3,7 +3,8 @@ import * as THREE from "three";
 import * as random from "maath/random";
 import { useEffect, useState, useRef } from "react";
 import { extend } from "@react-three/fiber";
-import  DesktopApp  from "./components/Desktop/DesktopApp";
+import DesktopApp from "./components/DesktopApp";
+
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial, Stats } from "@react-three/drei";
 import Head from "next/head";

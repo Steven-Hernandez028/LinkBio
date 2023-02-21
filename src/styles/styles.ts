@@ -1,6 +1,7 @@
 
 //variablesFontsSize
 export const PARRAGRAH_FONT_SIZE = "1.2em";
+export const FOOTER_FONT_SIZE = "1em";
 export const MENU_FONT_SIZE = "1.2em";
 export const LOGO_FONT_SIZE = "2em";
 export const TITLE_FONT_SIZE = "4em";

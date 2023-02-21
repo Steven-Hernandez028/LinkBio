@@ -18,6 +18,7 @@ import {
   TITLE_FONT_SIZE,
   SUBTITLE_FONT_SIZE,
   BUYMEACOFFEE_FONT_SIZE,
+  FOOTER_FONT_SIZE,
 } from "./styles";
 import {
   COLOR_TOP_FONT,
@@ -152,7 +153,7 @@ export const SideTitle = styled(Title)`
 export const Description = styled.p<PropsDescription>`
   position: relative;
   border: 1px solid #f3f;
-  text-align: center;
+  text-align: ${(props)=> props.textAlign || "center"};
   bottom: ${(props) => props.bottom || "25%"};
   width: ${(props) => props.width || "auto"};
   font-family: ${INCOSOLATA_PARRAGRAH};
@@ -305,11 +306,11 @@ export const Textarea = styled.textarea`
   position: relative;
   border-bottom: 0.5px solid ${COLOR_INPUT_TEXT};
 `;
-
+//INCOSOLATA_PARRAGRAH
 export const LinkFooter = styled.a`
   text-decoration: none;
   font-family: ${INCOSOLATA_PARRAGRAH};
-  font-size: ${PARRAGRAH_FONT_SIZE};
+  font-size: ${FOOTER_FONT_SIZE};
   color: white;
 `;
 // export const Label = styled.label`
