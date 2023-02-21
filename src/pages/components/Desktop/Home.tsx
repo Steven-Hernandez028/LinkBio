@@ -19,7 +19,7 @@ const Menu = () => {
 const Home = () => {
   return (
     <Section>
-    <FlexContainer justifyContent="" heigth="10%">
+    <FlexContainer background="rgba(0,5,150,.3)" borderRadius="30px 30px 30px 30px" justifyContent="" heigth="10%">
       <Logo>
         <span style={{ color: "#7200F5" }}>S</span>tevdev
       </Logo>

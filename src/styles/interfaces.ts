@@ -9,6 +9,8 @@ export interface PropsContainer {
     left?: string;
     paddingLeft?:string,
     border?:string,
+    background?:string;
+    borderRadius?:string;
   }
   export interface PropsDescription {
     bottom?: string;
@@ -39,7 +41,9 @@ export interface FormProps{
     textAlign?:string,
     width?:string,
   }
-  
+  export interface CardProps {
+    cursor? :string;
+  }
   export interface ButtonProps{
     top? :string;
     marginLeft?:string;

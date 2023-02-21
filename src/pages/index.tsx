@@ -84,6 +84,7 @@ export default function Webpage() {
       </group>
     );
   };
+        {/* <Box color="#18a36e" position={[2, -5, -9]} />  */}
 
   return (
     <>
@@ -93,18 +94,15 @@ export default function Webpage() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
-      <main>
-        {/* Home */}
-        {/* <Canvas
+      <main>     
+      <Canvas
           style={{
-            border: "2px solid #fff",
             width: "100vw",
             position: "fixed",
           }}
-        > */}
-        {/* <Stats /> */}
-        {/* <Box color="#18a36e" position={[2, -5, -9]} /> */}
-        {/* <Stars />
+        >
+        <Stats />
+            <Stars />
           <directionalLight
             color="#ffffff"
             intensity={1}
@@ -113,7 +111,7 @@ export default function Webpage() {
           <hemisphereLight intensity={0.2} color="#fff" groundColor="blue" />
 
 
-        </Canvas> */}
+        </Canvas>
 
         {Md === true ? <div>hola</div> : <DesktopApp />}
       </main>

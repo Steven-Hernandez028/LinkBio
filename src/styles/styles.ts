@@ -33,6 +33,7 @@ export const Styles  = {
       color: `${COLOR_ICON}`,
       width: "40%",
       height: "40%",
+      
     },
     {
       color: `${COLOR_ICON_2}`,
