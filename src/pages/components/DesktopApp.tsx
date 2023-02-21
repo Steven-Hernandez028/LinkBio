@@ -4,7 +4,72 @@ import SocialMedia from "./Desktop/SocialMedia";
 import BannerDonate from "./Desktop/BannerDonate";
 import ContactMe from "./Desktop/ContactMe";
 import Footer from "./Desktop/Footer";
-import ModalEmail from "./Desktop/ModalEmail";
+import Modal from "react-modal";
+import { Button, Description, FlexContainer, InputText } from '@/styles/styledComponents';
+import { Styles } from '@/styles/styles';
+
+
+
+
+
+
+
+
+
+
+
+const ModalEmail = ({
+  modalIsOpen,
+  closeModal,
+  handleOnChange,
+  handleSubmit,
+  ToggleMsg
+}: any) => {
+
+
+  const Message =(ToggleMsg :any)=>{
+    if(ToggleMsg.ShowMessage === undefined){
+      return "Did you donate? i would like to thank you, pleave leave you email here:"
+    }else  if(ToggleMsg.ShowMessage === true){
+      return "Thanks";
+    }else{
+      return "Did you donate? i would like to thank you, pleave leave you email here:";
+    }
+  }
+  return (
+    <Modal
+      isOpen={modalIsOpen}
+      onRequestClose={closeModal}
+      style={Styles.modal}
+      ariaHideApp={false}
+    >
+      <FlexContainer flexDirection="column" width="100%" heigth="80%">
+        <Description bottom="0">
+
+          {Message(ToggleMsg)}
+        </Description>
+        <InputText
+          onChange={(e) => handleOnChange(e)}
+          marginLeft="0"
+          type="input"
+        />
+      </FlexContainer>
+
+      <Button onClick={handleSubmit} top="80%">Send</Button>
+    </Modal>
+  );
+};
+
+
+
+
+
+
+
+
+
+
+
 
 const DesktopApp = () => {
   const [Mail, setMail] = useState<string>("");
