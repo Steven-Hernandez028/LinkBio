@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { Inconsolata } from "@next/font/google";
+import { motion } from "framer-motion"
+
 import { Karla } from "@next/font/google";
 import {
   PropsContainer,
@@ -10,6 +12,7 @@ import {
   ButtonProps,
   LabelProps,
   FormProps,
+  CardProps,
 } from "./interfaces";
 import {
   PARRAGRAH_FONT_SIZE,
@@ -18,6 +21,7 @@ import {
   TITLE_FONT_SIZE,
   SUBTITLE_FONT_SIZE,
   BUYMEACOFFEE_FONT_SIZE,
+  FOOTER_FONT_SIZE,
 } from "./styles";
 import {
   COLOR_TOP_FONT,
@@ -52,15 +56,18 @@ const KARLA = karla.style.fontFamily;
 export const FlexContainer = styled.div<PropsContainer>`
   display: flex;
   position: relative;
+  background: ${(props)=> props.background || "none"};
   height: ${(props) => props.heigth || "100px"};
   width: ${(props) => props.width || "100%"};
-  border: ${(props) => props.border || "1px solid #fff"};
+  border: ${(props) => props.border || "none"};
+  
   flex-direction: ${(props) => props.flexDirection || "row"};
   align-items: ${(props) => props.alignItems || "center"};
   padding-left: ${(props) => props.paddingLeft || "0%"};
   justify-content: ${(props) => props.justifyContent || "space-between"};
   flex-wrap: ${(props) => props.wrap || "none"};
   left: ${(props) => props.left || "0%;"};
+  border-radius: ${(props)=> props.borderRadius || "none"};
 `;
 //
 
@@ -72,6 +79,7 @@ const setRadius = (radius: string | undefined) => {
 };
 // border-radius: ${(props) => setRadius(props.radius)}
 //  border: 3px solid white;
+//  border: 3px solid white;
 
 export const Section = styled.section<PropsSection>`
   display: flex;
@@ -79,7 +87,6 @@ export const Section = styled.section<PropsSection>`
   flex-direction: ${(props) => props.flexDirection || "column"};
   width: ${(props) => props.width || "80.5vw"};
   left: ${(props) => props.left || "9.3%"};
-  border: 3px solid white;
   overflow: hidden;
   height: ${(props) => props.height || "100vh"};
   background: ${(props) => props.background || "none"};
@@ -146,13 +153,11 @@ export const SideTitle = styled(Title)`
   margin: 10% 0 10% 0;
   writing-mode: vertical-lr;
   text-orientation: upright;
-  border: 1px solid #f3f;
   font-size: ${SUBTITLE_FONT_SIZE};
 `;
 export const Description = styled.p<PropsDescription>`
   position: relative;
-  border: 1px solid #f3f;
-  text-align: center;
+  text-align: ${(props)=> props.textAlign || "center"};
   bottom: ${(props) => props.bottom || "25%"};
   width: ${(props) => props.width || "auto"};
   font-family: ${INCOSOLATA_PARRAGRAH};
@@ -171,25 +176,32 @@ export const CardWrapper = styled.div`
   width: 80%;
   height: 80%;
   display: grid;
-  border: 2px solid #534;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   grid-auto-flow: row;
   grid-gap: 15%;
 `;
 //  border: 1px solid ${COLOR_ICON};
+//  border: 1px solid ${COLOR_ICON};
 
-export const Card = styled.div`
+export const Card = styled(motion.a)<CardProps>`
+display:block;
+cursor:${props => props.cursor || "select"};
   min-width: 50px;
   max-width: 300px;
-  border: 1px solid ${COLOR_ICON};
   border-radius: 40px 0 40px 0;
   position: relative;
+  background: rgba(252,0,2,.1);
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: space-around;
   box-shadow: -4px 0px 15px -7px rgb(255, 111, 0, 0.4);
+  transition: all .3s ease-in-out;
+
+  &:active{
+    box-shadow: -4px 0px 20px -7px rgb(190, 10, 0, 0.9);
+  }
 `;
 
 export const Label = styled.p<LabelProps>`
@@ -305,11 +317,11 @@ export const Textarea = styled.textarea`
   position: relative;
   border-bottom: 0.5px solid ${COLOR_INPUT_TEXT};
 `;
-
+//INCOSOLATA_PARRAGRAH
 export const LinkFooter = styled.a`
   text-decoration: none;
   font-family: ${INCOSOLATA_PARRAGRAH};
-  font-size: ${PARRAGRAH_FONT_SIZE};
+  font-size: ${FOOTER_FONT_SIZE};
   color: white;
 `;
 // export const Label = styled.label`
