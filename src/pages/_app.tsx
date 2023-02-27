@@ -1,6 +1,5 @@
 import type { AppProps } from "next/app";
 import { Inter } from "@next/font/google";
-import { Inconsolata} from "@next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
 // const inconsolata = Inconsolata({
@@ -24,8 +23,9 @@ export default function App({ Component, pageProps }: AppProps) {
           box-sizing: border-box;
           font-size: 16px;
           overflow-x: hidden;
-
+   
         }
+  
      
       `}
       </style>

@@ -6,6 +6,7 @@ import ContactMe from "./Desktop/ContactMe";
 import Footer from "./Desktop/Footer";
 import Modal from "react-modal";
 import { Button, Description, FlexContainer, InputText } from '@/styles/styledComponents';
+
 import { Styles } from '@/styles/styles';
 
 
@@ -131,8 +132,7 @@ const DesktopApp = () => {
     <>
       <Home />
 
-      <SocialMedia />
-
+      <SocialMedia/>
       <BannerDonate handleModal={handleModal} />
 
       {modalIsOpen ? (

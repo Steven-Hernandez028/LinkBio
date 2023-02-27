@@ -38,7 +38,11 @@ const cards =[
     }
 
 ]
-const SocialMedia = () => {
+
+
+
+
+const SocialMedia = ()  => {
   return (
     <Section flexDirection="row">
     <FlexContainer alignItems="start" width="7%" heigth="100%">
@@ -80,6 +84,7 @@ const SocialMedia = () => {
       </SideTitle>
     </FlexContainer>
   </Section>
+    
 
 
   )

@@ -1,12 +1,22 @@
+import useWindow from "@/helper/useWindow";
 
-//variablesFontsSize
-export const PARRAGRAH_FONT_SIZE = "1.2em";
+
+//variablesFontsSize   Desktop - Tablet
+export const PARRAGRAH_FONT_SIZE = "3vmin";
 export const FOOTER_FONT_SIZE = "1em";
 export const MENU_FONT_SIZE = "1.2em";
 export const LOGO_FONT_SIZE = "2em";
-export const TITLE_FONT_SIZE = "4em";
-export const SUBTITLE_FONT_SIZE = "3.5em";
-export const BUYMEACOFFEE_FONT_SIZE = "3em";
+export const TITLE_FONT_SIZE = "9vmin";
+export const SUBTITLE_FONT_SIZE = "7vmin";
+export const BUYMEACOFFEE_FONT_SIZE = "7vmin";
+
+//variableFontsSize Mobile
+export const MOBILE_TITLE_FONT_SIZE = "12vmin";
+export const MOBILE_SUBTITLE_FONT_SIZE = "10vmin";
+
+
+
+export const MOBILE_PARRAGRAH_FONT_SIZE = "3vmin"
 //COLORS
 export const BACKGROUND_COLOR="#060958";
 export const COLOR_TOP_FONT = "#fff";
@@ -16,8 +26,15 @@ export const COLOR_ICON = "#FF7D26";
 export const COLOR_ICON_2 = "#7881F9"
 export const COLOR_INPUT_TEXT = "#09F7FF";
 
+
+
 export const Styles  = {
   image: {
+    left: "0%",
+    position:"absolute",
+    objectFit: "contain",
+  },
+  imageMobile: {
     left: "0%",
     position:"absolute",
     objectFit: "contain",
@@ -36,6 +53,12 @@ export const Styles  = {
       
     },
     {
+      color: `${COLOR_ICON}`,
+      width: "50%",
+      height: "50%",
+    },
+  
+    {
       color: `${COLOR_ICON_2}`,
       width: "40%",
       height: "30%",
@@ -43,6 +66,15 @@ export const Styles  = {
       left:"50%",
       top: "50%",
       transform: "rotate(-0.1turn)"
+    },
+    {
+      color: `${COLOR_ICON_2}`,
+      width: "60%",
+      height: "50%",
+      position:"absolute",
+      left:"-20%",
+      top: "70%",
+      transform: "rotate(0.1turn)"
     },
   ],
   modal:{
@@ -68,10 +100,36 @@ export const Styles  = {
       backgroundColor: `${BACKGROUND_COLOR}`,
       transform: 'translate(-50%, -50%)',
     },
-
+   
+    
    
 
   },
+  ModalMobile :{
+    overlay: {
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      backgroundColor: 'rgba(0, 0, 0, 0.75)'
+    },
+    content:{
+      top: '50%',
+      left: '50%',
+      right:'auto',
+      width:"50%",
+      height:"30%",
+      bottom: 'auto',
+      overflow:"hidden",
+      marginRight: '-50%',
+      border:".5px solid #f33",
+      boxShadow: "-4px 0px 15px -7px rgba(43, 34, 100, .6)",
+      backgroundColor: `${BACKGROUND_COLOR}`,
+      transform: 'translate(-50%, -50%)',
+    },
+
+  }
  
   
 } as const;

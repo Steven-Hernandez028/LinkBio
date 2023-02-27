@@ -1,14 +1,13 @@
 import * as React from "react";
 import * as THREE from "three";
 import * as random from "maath/random";
-import { useEffect, useState, useRef } from "react";
-import { extend } from "@react-three/fiber";
-import DesktopApp from "./components/DesktopApp";
-
-import { Canvas, useFrame } from "@react-three/fiber";
-import { Points, PointMaterial, Stats } from "@react-three/drei";
 import Head from "next/head";
+import { useEffect, useState, useRef } from "react";
+import { Canvas, extend, useFrame } from "@react-three/fiber";
+import { Points, PointMaterial, Stats } from "@react-three/drei";
+import DesktopApp from "./components/DesktopApp";
 import useWindow from "@/helper/useWindow";
+import MobileApp from "./components/MobileApp";
 extend(THREE);
 
 
@@ -17,13 +16,6 @@ export default function Webpage() {
   const [Md, setMd] = useState(false);
   const [Data, setData] = useState<boolean>(true);
 
-  useEffect(() => {
-    if (width < 600) {
-      setMd(true);
-    } else {
-      setMd(false);
-    }
-  }, [width]);
 
 
 
@@ -95,7 +87,7 @@ export default function Webpage() {
         {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
       <main>     
-      <Canvas
+      {/* <Canvas
           style={{
             width: "100vw",
             position: "fixed",
@@ -111,9 +103,9 @@ export default function Webpage() {
           <hemisphereLight intensity={0.2} color="#fff" groundColor="blue" />
 
 
-        </Canvas>
+        </Canvas> */}
 
-        {Md === true ? <div>hola</div> : <DesktopApp />}
+        {width >600 ?  <DesktopApp />:<MobileApp/>}
       </main>
     </>
   );

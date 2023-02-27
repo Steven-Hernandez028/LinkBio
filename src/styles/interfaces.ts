@@ -11,8 +11,17 @@ export interface PropsContainer {
     border?:string,
     background?:string;
     borderRadius?:string;
+    position?:string;
+  }
+  export  interface TitleProps{
+    marginLeft?:string;
+    width?: string;
+    height?:string;
+    textAlign?:string;
+  
   }
   export interface PropsDescription {
+    position?:string;
     bottom?: string;
     width?: string;
     textAlign?:string;
@@ -30,6 +39,8 @@ export interface FormProps{
     left?: string;
     background?: string;
     radius?: string;
+    position?:string;
+    margin?:string;
   }
   
   export interface itemProps {
@@ -40,6 +51,7 @@ export interface FormProps{
     fontSize?:string,
     textAlign?:string,
     width?:string,
+    marginLeft?:string,
   }
   export interface CardProps {
     cursor? :string;
