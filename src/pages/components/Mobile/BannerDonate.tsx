@@ -10,7 +10,7 @@ const BannerDonate = ({handleModal}:any) => {
     radius="activated"
     background="#ff7d26"
     left="0%"
-width="98%"
+width="100%"
     flexDirection="column"
     height="60vh"
   >

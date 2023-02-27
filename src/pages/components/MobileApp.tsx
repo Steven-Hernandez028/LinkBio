@@ -7,6 +7,8 @@ import {
   Form,
   SideTitle,
   InputText,
+  LinkFooter,
+  Logo,
   Textarea,
   Button,
 } from "@/styles/styledComponents";
@@ -19,6 +21,7 @@ import { BiCoffeeTogo } from "react-icons/bi";
 import Modal from "react-modal";
 import BannerDonate from "./Mobile/BannerDonate";
 import Image from "next/image";
+import ContactMe from "./Mobile/ContactMe";
 
 const ModalEmail = ({
   modalIsOpen,
@@ -135,48 +138,57 @@ const MobileApp = () => {
         />
       ) : null}
 
-      <Section width="71vw" left="14%">
-      <FlexContainer alignItems="center" width="10%" heigth="100%">
-        <SideTitle>
-          <span style={Styles.vowel[0]}>C</span>ontact
-        </SideTitle>
-      </FlexContainer>
-      <FlexContainer justifyContent="center" width="90%" heigth="100%">
-        <Form border="1px solid #f3f">
-          <FlexContainer width="40%" heigth="100%;">
-            <Image
-              priority
-              fill
-              alt="contact"
-              sizes="100%"
-              src="/contact.png"
-              style={Styles.imageContact}
-            />
+      <ContactMe />
+
+      <Section
+        left="0%"
+        width="100%"
+        overflow="hidden"
+        height="60vh"
+        background="#100e2f"
+        flexDirection="column"
+      >
+        <FlexContainer margin = "5% 0 0 0" justifyContent="start" border = "1px solid #f34" width= "100%" heigth="40%">
+
+          <FlexContainer
+            width="30%"
+            justifyContent="space-around"
+            alignItems="start"
+            heigth="100%"
+            flexDirection="column"
+            border = "1px solid #334"
+          >
+            <LinkFooter href="#">Instagram</LinkFooter>
+            <LinkFooter href="#">Facebook</LinkFooter>
+            <LinkFooter href="#">YouTube</LinkFooter>
+            <LinkFooter href="#">Linkedin</LinkFooter>
           </FlexContainer>
 
           <FlexContainer
-            alignItems="start"
-            justifyContent="center"
-            flexDirection="column"
             width="70%"
+            justifyContent="space-around"
+            alignItems="start"
             heigth="100%"
+            flexDirection="column"
+            border = "1px solid #a34"
           >
-            <Label left="10%">Name:</Label>
-            <InputText top="0%" type="text" />
-            <Label left="10%">Email:</Label>
-
-            <InputText top="0%" type="text" />
-            <Label left="10%">Message:</Label>
-
-            <Textarea />
-            <Button top="89%" type="submit">
-              Send
-            </Button>
+            <LinkFooter href="#">Donate</LinkFooter>
+            <LinkFooter href="#">Credits</LinkFooter>
           </FlexContainer>
-        </Form>
-      </FlexContainer>
-   
 
+      
+        </FlexContainer>
+
+
+
+        <FlexContainer width="100%"  heigth="40%">
+            <Logo width="100%" textAlign="start" fontSize="5em">
+              <span style={Styles.vowel[0]}>S</span>tevdev
+            </Logo>
+          </FlexContainer>
+        <FlexContainer heigth="15%" justifyContent="Center">
+          <Label >Made with❤️ by Steven Hernandez</Label>
+        </FlexContainer>
       </Section>
     </>
   );

@@ -64,7 +64,7 @@ export const FlexContainer = styled.div<PropsContainer>`
   height: ${(props) => props.heigth || "100px"};
   width: ${(props) => props.width || "100%"};
   border: ${(props) => props.border || "none"};
-
+  margin : ${(props) => props.margin || "0px"};
   flex-direction: ${(props) => props.flexDirection || "row"};
   align-items: ${(props) => props.alignItems || "center"};
   padding-left: ${(props) => props.paddingLeft || "0%"};
@@ -72,12 +72,16 @@ export const FlexContainer = styled.div<PropsContainer>`
   flex-wrap: ${(props) => props.wrap || "none"};
   left: ${(props) => props.left || "0%;"};
   border-radius: ${(props) => props.borderRadius || "none"};
+
+  @media (max-width:600px){
+    box-shadow: ${(props)=>props.boxShadow || "none"};
+  }
 `;
 //
-
+//box-shadow: -4px 0px 15px -7px rgb(255, 111, 0, 0.4);
 // border-radius: ${(props) => setRadius(props.radius)}
-//  border: 3px solid white;
-//  border: 3px solid white;
+//  
+// 
 //
 export const Section = styled.section<PropsSection>`
   display: flex;
@@ -86,7 +90,7 @@ export const Section = styled.section<PropsSection>`
   flex-direction: ${(props) => props.flexDirection || "column"};
   width: ${(props) => props.width || "80.5vw"};
   left: ${(props) => props.left || "9.3%"};
-  overflow: hidden;
+  overflow: ${(props)=>props.overflow || "hidden"};
   height: ${(props) => props.height || "100vh"};
   background: ${(props) => props.background || "none"};
   margin: ${(props)=> props.margin || "0px"};
@@ -355,6 +359,11 @@ export const Form = styled.form<FormProps>`
   flex-wrap: none;
   box-shadow: -4px 0px 15px -7px rgb(255, 111, 0, 0.4);
   left: 0%;
+
+  @media (max-width: 600px){
+    box-shadow: none;
+    width: 100%;
+  }
 `;
 
 export const InputText = styled.input<ButtonProps>`
@@ -373,6 +382,10 @@ export const InputText = styled.input<ButtonProps>`
   font-family: ${INCOSOLATA_PARRAGRAH};
   margin-bottom: 10%;
   margin-left: ${(props) => props.marginLeft || "10%"};
+
+  @media (max-width:600px){
+    width: 70%;
+  }
 `;
 
 export const Textarea = styled.textarea`
@@ -392,6 +405,14 @@ export const Textarea = styled.textarea`
   margin-left: 10%;
   position: relative;
   border-bottom: 0.5px solid ${COLOR_INPUT_TEXT};
+
+  @media (max-width:600px){
+
+  max-width: 70%;
+  min-width: 70dsdf%;
+  min-height: 20%;
+  max-height: 20%;
+  }
 `;
 //INCOSOLATA_PARRAGRAH
 export const LinkFooter = styled.a`

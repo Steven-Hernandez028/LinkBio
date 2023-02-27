@@ -12,6 +12,8 @@ export interface PropsContainer {
     background?:string;
     borderRadius?:string;
     position?:string;
+    margin?:string;
+    boxShadow?:string;
   }
   export  interface TitleProps{
     marginLeft?:string;
@@ -27,7 +29,7 @@ export interface PropsContainer {
     textAlign?:string;
   }
 export interface FormProps{
-  border:string;
+  border?:string;
 }
   export interface LabelProps {
     left?: string;
@@ -40,6 +42,7 @@ export interface FormProps{
     background?: string;
     radius?: string;
     position?:string;
+    overflow?:string;
     margin?:string;
   }
   
