@@ -13,7 +13,9 @@ import Image from "next/image";
 
 const ContactMe = () => {
   return (
+
     <Section  background = "##060528" id = "contact" flexDirection="row">
+
       <FlexContainer alignItems="center" width="10%" heigth="100%">
         <SideTitle>
           <span style={Styles.vowel[0]}>C</span>ontact

@@ -13,12 +13,6 @@ import { Styles } from '@/styles/styles';
 
 
 
-
-
-
-
-
-
 const ModalEmail = ({
   modalIsOpen,
   closeModal,
@@ -60,15 +54,6 @@ const ModalEmail = ({
     </Modal>
   );
 };
-
-
-
-
-
-
-
-
-
 
 
 

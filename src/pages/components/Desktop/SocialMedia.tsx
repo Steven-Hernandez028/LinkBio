@@ -45,6 +45,7 @@ const cards =[
 const SocialMedia = ()  => {
   return (
     <Section id="social" flexDirection="row">
+
     <FlexContainer alignItems="start" width="7%" heigth="100%">
       <SideTitle>
         <span style={Styles.vowel[0]}>S</span>ocial
@@ -84,7 +85,7 @@ const SocialMedia = ()  => {
       </SideTitle>
     </FlexContainer>
   </Section>
-    
+
 
 
   )
