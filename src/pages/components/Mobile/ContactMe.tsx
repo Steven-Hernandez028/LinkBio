@@ -1,0 +1,45 @@
+import { Section,FlexContainer,SideTitle,Form,InputText,Button, Label,Textarea} from "@/styles/styledComponents"
+import { Styles } from "@/styles/styles"
+
+const ContactMe = () => {
+  return (
+    
+<Section background = "##060528" overflow ="initial"width="100vw" left="0%">
+  
+  <FlexContainer   boxShadow = "-4px 0px 15px -7px rgb(255, 111, 0, 0.4)"  border="1px solid #f3f" flexDirection = "column" justifyContent="center" width="100%" heigth="100%">
+  <SideTitle textAlign="center">
+      <span style={Styles.vowel[0]}>C</span>ontact
+    </SideTitle>
+    <Form>
+
+      <FlexContainer
+        alignItems="start"
+        justifyContent="center"
+        
+        flexDirection="column"
+   
+        width="100%"
+        heigth="100%"
+      >
+        <Label left="10%">Name:</Label>
+        <InputText fontSize="4vmin" top="0%" type="text" />
+        <Label left="10%">Email:</Label>
+
+        <InputText fontSize="4vmin" top="0%" type="text" />
+        <Label left="10%">Message:</Label>
+
+        <Textarea />
+        <Button top="90%" type="submit">
+          Send
+        </Button>
+      </FlexContainer>
+    </Form>
+  </FlexContainer>
+
+
+  </Section>
+
+  )
+}
+
+export default ContactMe

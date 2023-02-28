@@ -1,28 +1,27 @@
-import { Description, FlexContainer, Section, SubTitle,DonateButton } from "@/styles/styledComponents"
-import { BiCoffeeTogo } from "react-icons/bi"
-import { Styles } from "@/styles/styles"
+import React from 'react'
+import { Section,FlexContainer,SubTitle,Description, DonateButton} from '@/styles/styledComponents'
+import { BiCoffeeTogo } from 'react-icons/bi'
+import { Styles } from '@/styles/styles'
 
-
-
-const BannerDonate = ({handleModal} : any) => {
+const BannerDonate = ({handleModal}:any) => {
   return (
+    
     <Section
-    id = "donate"
     radius="activated"
     background="#ff7d26"
     left="0%"
-    width="100%"
-    flexDirection="row"
-    height="25vh"
+width="100%"
+    flexDirection="column"
+    height="60vh"
   >
-    <FlexContainer width="30%" heigth="100%">
+    <FlexContainer width="100%" alignItems="center" heigth="40%"> 
       <SubTitle>
         <span style={Styles.vowel[1]}>B</span>uy me a coffee
       </SubTitle>
-      <BiCoffeeTogo style={Styles.icons[2]} />
+      <BiCoffeeTogo style={Styles.icons[3]} />
     </FlexContainer>
 
-    <FlexContainer width="70%" heigth="100%">
+    <FlexContainer width="100%" justifyContent="space-around" heigth="100%">
       <Description width="85%" bottom="10%">
         Support me as a web developer with a donation. Any contribution, no
         matter how small, will be greatly appreciated and will allow me to
@@ -34,12 +33,17 @@ const BannerDonate = ({handleModal} : any) => {
           .PAYPAL_ID!}`}
         target="_blank"
         rel="noopener noreferrer"
-        onClick={handleModal}
+        onClick={handleModal} 
       >
+    
         Donate
       </DonateButton>
     </FlexContainer>
-  </Section>
+
+        
+      </Section>
+
+   
   )
 }
 

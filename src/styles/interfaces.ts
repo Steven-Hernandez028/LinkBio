@@ -11,17 +11,29 @@ export interface PropsContainer {
     border?:string,
     background?:string;
     borderRadius?:string;
+    position?:string;
+    margin?:string;
+    boxShadow?:string;
+  }
+  export  interface TitleProps{
+    marginLeft?:string;
+    width?: string;
+    height?:string;
+    textAlign?:string;
+  
   }
   export interface PropsDescription {
+    position?:string;
     bottom?: string;
     width?: string;
     textAlign?:string;
   }
 export interface FormProps{
-  border:string;
+  border?:string;
 }
   export interface LabelProps {
     left?: string;
+    fontSize?:string;
   }
   export interface PropsSection {
     flexDirection?: string;
@@ -30,6 +42,9 @@ export interface FormProps{
     left?: string;
     background?: string;
     radius?: string;
+    position?:string;
+    overflow?:string;
+    margin?:string;
   }
   
   export interface itemProps {
@@ -40,6 +55,7 @@ export interface FormProps{
     fontSize?:string,
     textAlign?:string,
     width?:string,
+    marginLeft?:string,
   }
   export interface CardProps {
     cursor? :string;
@@ -47,5 +63,6 @@ export interface FormProps{
   export interface ButtonProps{
     top? :string;
     marginLeft?:string;
+    fontSize?:string;
   }
   
