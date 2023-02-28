@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4723df52cc59f64d8a6fed715a55f5cc8744c767
 import useWindow from "@/helper/useWindow";
 import {
   Description,
@@ -126,3 +130,7 @@ const Home = () => {
 };
 
 export default Home;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4723df52cc59f64d8a6fed715a55f5cc8744c767

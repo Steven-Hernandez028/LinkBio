@@ -13,12 +13,15 @@ import { Styles } from '@/styles/styles';
 
 
 
+<<<<<<< HEAD
 
 
 
 
 
 
+=======
+>>>>>>> 4723df52cc59f64d8a6fed715a55f5cc8744c767
 const ModalEmail = ({
   modalIsOpen,
   closeModal,
@@ -63,6 +66,7 @@ const ModalEmail = ({
 
 
 
+<<<<<<< HEAD
 
 
 
@@ -72,6 +76,8 @@ const ModalEmail = ({
 
 
 
+=======
+>>>>>>> 4723df52cc59f64d8a6fed715a55f5cc8744c767
 const DesktopApp = () => {
   const [Mail, setMail] = useState<string>("");
   const [ToggleMsg, setToggleMsg] = useState<object>({

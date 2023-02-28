@@ -19,7 +19,10 @@ const Items = [
   { id: "4", text: "Contact", icon: "📧" }
 ];
 
+
  const Navigation = () => (
+
+
   <motion.ul variants={variants}>
     {Items.map((item) => (
       <MenuItem id={item.id} key={item.id} text={item.text} icon={item.icon} />

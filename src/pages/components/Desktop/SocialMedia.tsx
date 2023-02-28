@@ -45,6 +45,10 @@ const cards =[
 const SocialMedia = ()  => {
   return (
     <Section id="social" flexDirection="row">
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4723df52cc59f64d8a6fed715a55f5cc8744c767
     <FlexContainer alignItems="start" width="7%" heigth="100%">
       <SideTitle>
         <span style={Styles.vowel[0]}>S</span>ocial
@@ -84,7 +88,11 @@ const SocialMedia = ()  => {
       </SideTitle>
     </FlexContainer>
   </Section>
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 4723df52cc59f64d8a6fed715a55f5cc8744c767
 
 
   )

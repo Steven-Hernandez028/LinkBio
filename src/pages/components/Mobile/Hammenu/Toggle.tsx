@@ -12,7 +12,10 @@ const Path = (props : any) => (
   />
 );
 
+
 const  MenuToggle = ({ toggle }:any) => (
+
+
   <button style={styles.button} onClick={toggle}>
     <svg width="23" height="23" viewBox="0 0 23 23">
       <Path
@@ -38,6 +41,5 @@ const  MenuToggle = ({ toggle }:any) => (
     </svg>
   </button>
 );
-
 
 export default MenuToggle
