@@ -183,8 +183,8 @@
 import "./styles.ts";
 import * as React from "react";
 import { motion, useCycle } from "framer-motion";
-import { MenuToggle } from "./Toggle";
-import { Navigation } from "./Nav";
+import MenuToggle  from "./Toggle";
+import  Navigation  from "./Nav";
 import { styles } from "./styles";
 
 const sidebar = {

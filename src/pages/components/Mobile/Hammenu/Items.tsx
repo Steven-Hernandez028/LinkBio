@@ -19,8 +19,7 @@ const variants = {
 };
 
 const colors = ["#fef6e4", "#f582ae", "#8bd3dd", "#b8c1ec", "#ff8906"];
-
-export const MenuItem = ({ id, text, icon } : any) => {
+const MenuItem = ({ id, text, icon } : any) => {
   const style = { border: `3px solid ${colors[id]}` };
   return (
     <motion.li
@@ -38,3 +37,6 @@ export const MenuItem = ({ id, text, icon } : any) => {
     </motion.li>
   );
 };
+
+
+export default MenuItem

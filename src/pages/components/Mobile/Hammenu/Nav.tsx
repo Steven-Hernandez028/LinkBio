@@ -1,6 +1,6 @@
 import * as React from "react";
 import { motion } from "framer-motion";
-import { MenuItem } from "./Items";
+import  MenuItem  from "./Items";
 
 const variants = {
   open: {
@@ -19,10 +19,12 @@ const Items = [
   { id: "4", text: "Contact", icon: "📧" }
 ];
 
-export const Navigation = () => (
+ const Navigation = () => (
   <motion.ul variants={variants}>
     {Items.map((item) => (
       <MenuItem id={item.id} key={item.id} text={item.text} icon={item.icon} />
     ))}
   </motion.ul>
 );
+
+export default Navigation
