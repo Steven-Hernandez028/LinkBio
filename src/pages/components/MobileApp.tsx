@@ -2,9 +2,7 @@ import { useState } from "react";
 import {
   Description,
   FlexContainer,
-
   InputText,
-
   Button,
 } from "@/styles/styledComponents";
 import Image from "next/image";
@@ -132,8 +130,7 @@ const MobileApp = () => {
       ) : null}
 
       <ContactMe />
-      <Footer/>
-     
+      <Footer />
     </>
   );
 };
