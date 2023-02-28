@@ -4,7 +4,7 @@ import { Styles } from "@/styles/styles"
 const ContactMe = () => {
   return (
     
-<Section overflow ="initial"width="71vw" left="14%">
+<Section background = "##060528" overflow ="initial"width="100vw" left="0%">
   
   <FlexContainer   boxShadow = "-4px 0px 15px -7px rgb(255, 111, 0, 0.4)"  border="1px solid #f3f" flexDirection = "column" justifyContent="center" width="100%" heigth="100%">
   <SideTitle textAlign="center">
@@ -17,7 +17,7 @@ const ContactMe = () => {
         justifyContent="center"
         
         flexDirection="column"
-        border= "1px solid #f43"
+   
         width="100%"
         heigth="100%"
       >

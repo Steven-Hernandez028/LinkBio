@@ -85,7 +85,6 @@ export const FlexContainer = styled.div<PropsContainer>`
 //
 export const Section = styled.section<PropsSection>`
   display: flex;
-  border: 3px solid white;
   position: ${(props) => props.position || "relative"};
   flex-direction: ${(props) => props.flexDirection || "column"};
   width: ${(props) => props.width || "80.5vw"};
@@ -136,7 +135,6 @@ export const Logo = styled.h3<LogoProps>`
   font-size: ${(props) => props.fontSize || LOGO_FONT_SIZE};
   text-align: ${(props) => props.textAlign || "none"};
   font-family: ${INCOSOLATA};
-  border: 1px solid #fff;
   width: ${(props) => props.width || "0%"};
 `;
 // border-radius:16% 14% 45% 95% / 27% 52% 48% 23% ;
@@ -158,7 +156,7 @@ export const RoundBox = styled.div`
 `;
 
 export const Title = styled.h1<TitleProps>`
-  border: 1px solid #fff;
+
   width: ${(props) => props.width || "auto"};
   height: ${(props) => props.height || "auto"};
   text-align: ${(props) => props.textAlign || "auto"};
@@ -230,7 +228,6 @@ export const CardWrapper = styled.div`
     height : 100%;
     width: 100%;
     justify-content:center;
-    border: 1px solid #fff;
     margin-left:10%;
     margin-right: 10%;
     grid-template-columns 1fr;
@@ -290,9 +287,9 @@ export const SubTitle = styled.h2`
   }
   @media (max-width:600px){
     position:relative;
-    left: 20%;
+    left: 30%;
     top:0px;
-    border: 3px solid #f13;
+  
     width:60%;
     font-size: ${MOBILE_SUBTITLE_FONT_SIZE};
 
@@ -349,7 +346,9 @@ export const Button = styled.button<ButtonProps>`
     background: #424;
   }
   @media (max-width:600px){
-    left:40%;
+      width: 40%;
+  height: 7%;
+    left:30%;
     font-size:4vmin;
   }
 `;
@@ -358,7 +357,6 @@ export const Button = styled.button<ButtonProps>`
 export const Form = styled.form<FormProps>`
   position: relative;
   display: flex;
-  border: 2px solid red;
   flex-direction: row;
   border: ${(props) => props.border || "none"};
   width: 70%;

@@ -2,26 +2,19 @@ import { useState } from "react";
 import {
   Description,
   FlexContainer,
-  Label,
-  Section,
-  Form,
-  SideTitle,
+
   InputText,
-  LinkFooter,
-  Logo,
-  Textarea,
+
   Button,
 } from "@/styles/styledComponents";
+import Image from "next/image";
 import { Styles } from "@/styles/styles";
 import SocialMedia from "./Mobile/SocialMedia";
 import Home from "./Mobile/Home";
-import Hammenu from "./Mobile/Hammenu/Hammenu";
-import { BiCoffeeTogo } from "react-icons/bi";
-
 import Modal from "react-modal";
 import BannerDonate from "./Mobile/BannerDonate";
-import Image from "next/image";
 import ContactMe from "./Mobile/ContactMe";
+import Footer from "./Mobile/Footer";
 
 const ModalEmail = ({
   modalIsOpen,
@@ -139,57 +132,8 @@ const MobileApp = () => {
       ) : null}
 
       <ContactMe />
-
-      <Section
-        left="0%"
-        width="100%"
-        overflow="hidden"
-        height="60vh"
-        background="#100e2f"
-        flexDirection="column"
-      >
-        <FlexContainer margin = "5% 0 0 0" justifyContent="start" border = "1px solid #f34" width= "100%" heigth="40%">
-
-          <FlexContainer
-            width="30%"
-            justifyContent="space-around"
-            alignItems="start"
-            heigth="100%"
-            flexDirection="column"
-            border = "1px solid #334"
-          >
-            <LinkFooter href="#">Instagram</LinkFooter>
-            <LinkFooter href="#">Facebook</LinkFooter>
-            <LinkFooter href="#">YouTube</LinkFooter>
-            <LinkFooter href="#">Linkedin</LinkFooter>
-          </FlexContainer>
-
-          <FlexContainer
-            width="70%"
-            justifyContent="space-around"
-            alignItems="start"
-            heigth="100%"
-            flexDirection="column"
-            border = "1px solid #a34"
-          >
-            <LinkFooter href="#">Donate</LinkFooter>
-            <LinkFooter href="#">Credits</LinkFooter>
-          </FlexContainer>
-
-      
-        </FlexContainer>
-
-
-
-        <FlexContainer width="100%"  heigth="40%">
-            <Logo width="100%" textAlign="start" fontSize="5em">
-              <span style={Styles.vowel[0]}>S</span>tevdev
-            </Logo>
-          </FlexContainer>
-        <FlexContainer heigth="15%" justifyContent="Center">
-          <Label fontSize="3vmin">Made with❤️ by Steven Hernandez</Label>
-        </FlexContainer>
-      </Section>
+      <Footer/>
+     
     </>
   );
 };

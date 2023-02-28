@@ -23,6 +23,7 @@ export default function App({ Component, pageProps }: AppProps) {
           box-sizing: border-box;
           font-size: 16px;
           overflow-x: hidden;
+          scroll-behavior: smooth;
    
         }
   

@@ -14,14 +14,14 @@ width="100%"
     flexDirection="column"
     height="60vh"
   >
-    <FlexContainer border= "3px solid #3f3" width="100%" alignItems="center" heigth="40%"> 
+    <FlexContainer width="100%" alignItems="center" heigth="40%"> 
       <SubTitle>
         <span style={Styles.vowel[1]}>B</span>uy me a coffee
       </SubTitle>
       <BiCoffeeTogo style={Styles.icons[3]} />
     </FlexContainer>
 
-    <FlexContainer border="1px solid #f43" width="100%" justifyContent="space-around" heigth="100%">
+    <FlexContainer width="100%" justifyContent="space-around" heigth="100%">
       <Description width="85%" bottom="10%">
         Support me as a web developer with a donation. Any contribution, no
         matter how small, will be greatly appreciated and will allow me to

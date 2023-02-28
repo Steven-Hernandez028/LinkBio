@@ -54,7 +54,7 @@ const SocialMedia = () => {
   return (
     <>
          <Section width="71vw" left="14%" height="280vh" flexDirection="column" margin="10% 0 10% 0">
-     <FlexContainer border= "1px solid #fff" heigth= "7%" justifyContent="center" alignItems="center" flexDirection="column">
+     <FlexContainer heigth= "7%" justifyContent="center" alignItems="center" flexDirection="column">
 
      <SideTitle >
         <span style={Styles.vowel[0]}>S</span>ocial
@@ -69,7 +69,7 @@ const SocialMedia = () => {
     
 
 
-      <FlexContainer border = "2px solid #f3f"  justifyContent="center" width="100%" heigth="93%">
+      <FlexContainer justifyContent="center" width="100%" heigth="93%">
         <CardWrapper>
           {cards.map(({ icon, label, link, cursor }, i) => {
             return (

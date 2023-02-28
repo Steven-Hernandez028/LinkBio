@@ -8,7 +8,7 @@ const Home = () => {
       
 
       
-    <FlexContainer heigth="40%" flexDirection="column"  justifyContent="end" alignItems="end" border="4px solid #f3f">
+    <FlexContainer heigth="40%" flexDirection="column"  justifyContent="end" alignItems="end" >
       <Logo width= "100%" textAlign = "center" marginLeft = "0" >
         <span style={{ color: "#7200F5" }}>S</span>tevdev
       </Logo>
@@ -19,7 +19,7 @@ const Home = () => {
       </Title>
     </FlexContainer>
 
-    <FlexContainer justifyContent="center" alignItems="center" flexDirection="column" heigth="60%" border="2px solid yellow"   >
+    <FlexContainer justifyContent="center" alignItems="center" flexDirection="column" heigth="60%"    >
 
       <Description bottom="0px">
       I am Steven Hernandez, a web developer with 2 years of experience.

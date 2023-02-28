@@ -99,13 +99,13 @@ if(width >600){
         {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
       <main style={{overflow:"hidden"}}>     
-      {/* <Canvas
+     <Canvas
           style={{
             width: "100vw",
             position: "fixed",
           }}
         >
-        <Stats />
+            
             <Stars />
           <directionalLight
             color="#ffffff"
@@ -115,7 +115,7 @@ if(width >600){
           <hemisphereLight intensity={0.2} color="#fff" groundColor="blue" />
 
 
-        </Canvas> */}
+        </Canvas> 
 
         {display(width)}
       </main>
