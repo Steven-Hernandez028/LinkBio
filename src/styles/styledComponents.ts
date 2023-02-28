@@ -205,9 +205,13 @@ export const Description = styled.p<PropsDescription>`
   margin-right: 4%;
   line-height: 1.8rem;
   color: white;
+   @media (max-width: 1100px){
+    font-size: 2vmin;
+  }
   @media (max-width: 600px) {
     font-size: 4vmin;
   }
+ 
 `;
 
 export const Footer = styled.footer``;
@@ -266,11 +270,11 @@ export const Card = styled(motion.a)<CardProps>`
 export const Label = styled.p<LabelProps>`
   position: relative;
   font-family: ${INCOSOLATA_PARRAGRAH};
-  font-size: ${PARRAGRAH_FONT_SIZE};
+  font-size: 2vmin;
   color: white;
   left: ${(props) => props.left || "0%"};
   @media (max-width: 600px){
-    font-size: 6vmin;
+    font-size: ${(props)=>props.fontSize || "5vmin"};
   }
 `;
 export const SubTitle = styled.h2`
@@ -281,6 +285,9 @@ export const SubTitle = styled.h2`
   color: white;
   font-size: ${BUYMEACOFFEE_FONT_SIZE};
   font-family: ${TITLE_FONT_SIZE};
+  @media (max-width: 1359px){
+    font-size:5vmin;
+  }
   @media (max-width:600px){
     position:relative;
     left: 20%;
@@ -295,8 +302,8 @@ export const SubTitle = styled.h2`
 export const DonateButton = styled.a<ButtonProps>`
   position: absolute;
   text-decoration: none;
-  width: 100px;
-  height: 30px;
+  width: 9%;
+  height: 15%;
   text-justify: center;
   left: 40%;
   appearance: button;
@@ -308,7 +315,7 @@ export const DonateButton = styled.a<ButtonProps>`
   color: white;
   background: ${COLOR_ICON_2};
   font-family: ${INCOSOLATA_PARRAGRAH};
-  font-size: ${PARRAGRAH_FONT_SIZE};
+  font-size:2vmin;
   border: none;
   padding: 5px;
   transition: all 0.1s ease-in;
@@ -318,6 +325,7 @@ export const DonateButton = styled.a<ButtonProps>`
   }
 
   @media (max-width: 600px){
+    font-size:4vmin;
       left: 36%;
     width: 25%;
   height:8%;
@@ -325,14 +333,14 @@ export const DonateButton = styled.a<ButtonProps>`
 `;
 export const Button = styled.button<ButtonProps>`
   position: absolute;
-  width: 100px;
-  height: 40px;
+  width: 19%;
+  height: 5%;
   left: 40%;
   top: ${(props) => props.top || "70%"};
   color: white;
   background: ${COLOR_ICON_2};
   font-family: ${INCOSOLATA_PARRAGRAH};
-  font-size: ${PARRAGRAH_FONT_SIZE};
+  font-size:2vmin;
   border: none;
   padding: 5px;
   transition: all 0.1s ease-in;
@@ -341,7 +349,8 @@ export const Button = styled.button<ButtonProps>`
     background: #424;
   }
   @media (max-width:600px){
-    left:30%;
+    left:40%;
+    font-size:4vmin;
   }
 `;
 //  border: 2px solid red;
@@ -385,6 +394,7 @@ export const InputText = styled.input<ButtonProps>`
 
   @media (max-width:600px){
     width: 70%;
+    font-size:${(props=>props.fontSize || PARRAGRAH_FONT_SIZE)};
   }
 `;
 
@@ -412,6 +422,7 @@ export const Textarea = styled.textarea`
   min-width: 70dsdf%;
   min-height: 20%;
   max-height: 20%;
+  font-size:4vmin;
   }
 `;
 //INCOSOLATA_PARRAGRAH

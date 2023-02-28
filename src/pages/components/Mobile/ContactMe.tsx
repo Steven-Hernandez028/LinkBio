@@ -15,20 +15,21 @@ const ContactMe = () => {
       <FlexContainer
         alignItems="start"
         justifyContent="center"
+        
         flexDirection="column"
         border= "1px solid #f43"
         width="100%"
         heigth="100%"
       >
         <Label left="10%">Name:</Label>
-        <InputText top="0%" type="text" />
+        <InputText fontSize="4vmin" top="0%" type="text" />
         <Label left="10%">Email:</Label>
 
-        <InputText top="0%" type="text" />
+        <InputText fontSize="4vmin" top="0%" type="text" />
         <Label left="10%">Message:</Label>
 
         <Textarea />
-        <Button top="89%" type="submit">
+        <Button top="90%" type="submit">
           Send
         </Button>
       </FlexContainer>

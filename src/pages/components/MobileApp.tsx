@@ -187,7 +187,7 @@ const MobileApp = () => {
             </Logo>
           </FlexContainer>
         <FlexContainer heigth="15%" justifyContent="Center">
-          <Label >Made with❤️ by Steven Hernandez</Label>
+          <Label fontSize="3vmin">Made with❤️ by Steven Hernandez</Label>
         </FlexContainer>
       </Section>
     </>

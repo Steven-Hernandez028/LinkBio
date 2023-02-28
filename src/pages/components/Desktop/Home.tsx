@@ -1,8 +1,8 @@
+import useWindow from '@/helper/useWindow'
 import { Description, FlexContainer, Logo, MenuWrap, ItemMenu, RoundBox, Section, Title } from '@/styles/styledComponents'
 import { Styles } from '@/styles/styles'
 import Image from 'next/image'
 import React from 'react'
-
 
 const Menu = () => {
     return (
@@ -17,6 +17,20 @@ const Menu = () => {
     );
   };
 const Home = () => {
+
+  const [width, height]  = useWindow();
+  
+const fixDescription = (width:number)=>{
+  if(width <= 1000 && width  > 600){
+    return "10%"
+  }else if (width >710 && width < 1140){
+    return "10%"
+  }else{
+    return "25%"
+  }
+
+
+}
   return (
     <Section>
     <FlexContainer background="rgba(0,5,150,.3)" borderRadius="30px 30px 30px 30px" justifyContent="" heigth="10%">
@@ -53,7 +67,7 @@ const Home = () => {
         </Title>
 
         {/*Descripcion*/}
-        <Description textAlign="none">
+        <Description bottom={fixDescription(width)} textAlign="none">
           I am Steven Hernandez, a web developer with 2 years of experience.
           I specialize in HTML, CSS, JavaScript and C# and have worked on
           projects for different customers. <br /> <br />I enjoy working

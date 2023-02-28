@@ -33,6 +33,7 @@ export interface FormProps{
 }
   export interface LabelProps {
     left?: string;
+    fontSize?:string;
   }
   export interface PropsSection {
     flexDirection?: string;
@@ -62,5 +63,6 @@ export interface FormProps{
   export interface ButtonProps{
     top? :string;
     marginLeft?:string;
+    fontSize?:string;
   }
   

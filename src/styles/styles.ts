@@ -63,8 +63,8 @@ export const Styles  = {
       width: "40%",
       height: "30%",
       position:"absolute",
-      left:"50%",
-      top: "50%",
+      left:"70%",
+      top: "60%",
       transform: "rotate(-0.1turn)"
     },
     {

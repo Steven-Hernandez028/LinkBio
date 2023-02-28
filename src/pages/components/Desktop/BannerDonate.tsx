@@ -18,7 +18,7 @@ const BannerDonate = ({handleModal} : any) => {
       <SubTitle>
         <span style={Styles.vowel[1]}>B</span>uy me a coffee
       </SubTitle>
-      <BiCoffeeTogo style={Styles.icons[1]} />
+      <BiCoffeeTogo style={Styles.icons[2]} />
     </FlexContainer>
 
     <FlexContainer width="70%" heigth="100%">

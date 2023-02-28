@@ -77,7 +77,19 @@ export default function Webpage() {
     );
   };
         {/* <Box color="#18a36e" position={[2, -5, -9]} />  */}
+  const display = (width:number)=>{
+if(width >600){
+  return(
+    <DesktopApp/>
+  )
+}else if(width<=600){
+  return (
+    <MobileApp/>
+  )
+}
 
+    
+  }
   return (
     <>
       <Head>
@@ -105,7 +117,7 @@ export default function Webpage() {
 
         </Canvas> */}
 
-        {width >600 ?  <DesktopApp />:<MobileApp/>}
+        {display(width)}
       </main>
     </>
   );
