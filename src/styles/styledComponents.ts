@@ -127,6 +127,11 @@ export const ItemMenu = styled.a<itemProps>`
     ${"margin-left:3.5vw;"};
     ${"font-size: 1rem;"};
   }
+
+  @media only screen and (max-width:600px){
+    font-size: 8vmin;
+    text-align:center;
+  }
 `;
 
 export const Logo = styled.h3<LogoProps>`

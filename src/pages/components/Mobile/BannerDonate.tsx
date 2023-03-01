@@ -7,6 +7,7 @@ const BannerDonate = ({handleModal}:any) => {
   return (
     
     <Section
+    id="donate"
     radius="activated"
     background="#ff7d26"
     left="0%"

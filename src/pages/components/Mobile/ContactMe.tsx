@@ -4,9 +4,9 @@ import { Styles } from "@/styles/styles"
 const ContactMe = () => {
   return (
     
-<Section background = "##060528" overflow ="initial"width="100vw" left="0%">
+<Section id="contact" background = "##060528" overflow ="initial"width="100vw" left="0%">
   
-  <FlexContainer   boxShadow = "-4px 0px 15px -7px rgb(255, 111, 0, 0.4)"  border="1px solid #f3f" flexDirection = "column" justifyContent="center" width="100%" heigth="100%">
+  <FlexContainer   boxShadow = "-4px 0px 15px -7px rgb(255, 111, 0, 0.4)"  border="1px solid #f3f" flexDirection = "column" justifyContent="center" width="99.6%" heigth="100%">
   <SideTitle textAlign="center">
       <span style={Styles.vowel[0]}>C</span>ontact
     </SideTitle>

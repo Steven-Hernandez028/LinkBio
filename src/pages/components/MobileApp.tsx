@@ -13,6 +13,8 @@ import Modal from "react-modal";
 import BannerDonate from "./Mobile/BannerDonate";
 import ContactMe from "./Mobile/ContactMe";
 import Footer from "./Mobile/Footer";
+import HamburgerMenu from "./Mobile/HamburgerMenu";
+
 
 const ModalEmail = ({
   modalIsOpen,
@@ -110,10 +112,12 @@ const MobileApp = () => {
     setMail(e.target.value);
   };
 
+ 
   return (
     <>
-      {/* 
-    <Hammenu/> */}
+   
+
+      <HamburgerMenu/>
       <Home />
       <SocialMedia />
 

@@ -11,8 +11,7 @@ export default async function sendEmail( req: NextApiRequest, res: NextApiRespon
 
         to: Mail,
         from: process.env.FROM_EMAIL!,
-        subject: "Gracias por tu donacion",
-        html: '<p>Gracias por donar a nuestra causa. Su generosidad hace una diferencia .</p>',
+        templateId:"d-69a6fe32b6704d6893217dc3a073bdfa"
       }
       try{
         await sgMail.send(msg)

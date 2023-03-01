@@ -4,7 +4,7 @@ import React from 'react'
 
 const Home = () => {
   return (
-    <Section width="71vw" left="14%">
+    <Section id="home" width="71vw" left="14%">
       
 
       

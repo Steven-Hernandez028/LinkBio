@@ -53,7 +53,7 @@ const cards = [
 const SocialMedia = () => {
   return (
     <>
-         <Section width="71vw" left="14%" height="280vh" flexDirection="column" margin="10% 0 10% 0">
+         <Section id = "social" width="71vw" left="14%" height="280vh" flexDirection="column" margin="10% 0 10% 0">
      <FlexContainer heigth= "7%" justifyContent="center" alignItems="center" flexDirection="column">
 
      <SideTitle >
