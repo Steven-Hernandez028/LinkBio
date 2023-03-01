@@ -5,14 +5,13 @@ import Head from "next/head";
 import { useEffect, useState, useRef } from "react";
 import { Canvas, extend, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial, Stats } from "@react-three/drei";
-import DesktopApp from "./components/DesktopApp";
+import LinkBio from "./components/LinkBio";
 import useWindow from "@/helper/useWindow";
-import MobileApp from "./components/MobileApp";
 extend(THREE);
 
 
 export default function Webpage() {
-  const [width, height] = useWindow();
+
   const [Md, setMd] = useState(false);
   const [Data, setData] = useState<boolean>(true);
 
@@ -47,10 +46,11 @@ export default function Webpage() {
 
   const Stars = (props: any) => {
     const ref = useRef<THREE.Points>(null);
-
+    const dots = React.useMemo(()=> new Float32Array(4000),[])
     const [sphere] = useState(() =>
-      random.inSphere(new Float32Array(4000), { radius: 5.5 })
+      random.inSphere(dots, { radius: 4.5 })
     );
+
     useFrame((state, delta) => {
       ref.current!.rotation.x -= delta / 20;
       ref.current!.rotation.y -= delta / 30;
@@ -76,20 +76,8 @@ export default function Webpage() {
       </group>
     );
   };
-        {/* <Box color="#18a36e" position={[2, -5, -9]} />  */}
-  const display = (width:number)=>{
-if(width >600){
-  return(
-    <DesktopApp/>
-  )
-}else if(width<=600){
-  return (
-    <MobileApp/>
-  )
-}
+//         <Box color="#18a36e" position={[2, -5, -9]} /> 
 
-    
-  }
   return (
     <>
       <Head>
@@ -98,14 +86,17 @@ if(width >600){
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
-      <main style={{overflow:"hidden"}}>     
- <Canvas
+
+      <main style={{overflow:"hidden",position:"relative"}}>     
+ 
+      {/* <Canvas
           style={{
             width: "100vw",
-            position: "fixed",
+            height: "100%",
+            position: "absolute",
           }}
         >
-            
+            <Stats/>
             <Stars />
           <directionalLight
             color="#ffffff"
@@ -114,10 +105,10 @@ if(width >600){
           />
           <hemisphereLight intensity={0.2} color="#fff" groundColor="blue" />
 
-
-        </Canvas>  
-
-        {display(width)}
+       
+        </Canvas>  */}
+        <LinkBio/>
+        {/* {display(width)} */}
       </main>
     </>
   );

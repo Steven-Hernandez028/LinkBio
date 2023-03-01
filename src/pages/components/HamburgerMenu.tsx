@@ -1,7 +1,7 @@
 import React,{useState} from "react";
 import { slide as Menu } from "react-burger-menu";
 import { RxCross1, RxHamburgerMenu } from "react-icons/rx";
-import { ItemMenu } from "@/styles/styledComponents";
+import { FlexContainer, ItemMenu } from "@/styles/styledComponents";
 
 
 var styles = {
@@ -41,7 +41,7 @@ var styles = {
     justifyContent: "center",
     background: "#34023A",
     padding: "2.5em 1.5em 0",
-    fontSize: "1.15em",
+
   },
   bmMorphShape: {
     fill: "#373a47",
@@ -62,7 +62,9 @@ var styles = {
     display: "flex",
   },
   bmOverlay: {
-    background: "rgba(0, 0, 0, 0.3)",
+    background: "rgba(0, 0, 0, .3)",
+    left:"0%"
+
   },
 };
 
@@ -86,6 +88,7 @@ const HamburgerMenu = () => {
         right
         styles={styles}
         onOpen={checkIsOpen}
+        onClose={checkIsOpen}
         customCrossIcon={<RxCross1 />}
         customBurgerIcon={<RxHamburgerMenu />}
       >
@@ -102,7 +105,7 @@ const HamburgerMenu = () => {
           Contact Me
         </ItemMenu>
       </Menu>
-    </div>
+      </div>
   );
 };
 

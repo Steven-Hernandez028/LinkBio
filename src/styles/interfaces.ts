@@ -14,6 +14,8 @@ export interface PropsContainer {
     position?:string;
     margin?:string;
     boxShadow?:string;
+    EnableElementMobile?:string;
+    EnableElementDesktop?:string;
   }
   export  interface TitleProps{
     marginLeft?:string;
@@ -44,6 +46,9 @@ export interface FormProps{
     radius?: string;
     position?:string;
     overflow?:string;
+    ElementMobile?:boolean;
+    ElementDesktop?:boolean;
+    
     margin?:string;
   }
   

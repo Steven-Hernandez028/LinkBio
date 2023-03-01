@@ -44,11 +44,14 @@ const cards =[
 
 const SocialMedia = ()  => {
   return (
-    <Section id="social" flexDirection="row">
+    <>
+    <Section ElementDesktop={true} id="social" flexDirection="row">
 
-    <FlexContainer alignItems="start" width="7%" heigth="100%">
+    <FlexContainer alignItems="center" width="7%" heigth="100%">
       <SideTitle>
-        <span style={Styles.vowel[0]}>S</span>ocial
+        <span style={Styles.vowel[0]}>S</span>ocial 
+        {" "}
+        <span style={Styles.vowel[0]}>M</span>edia   
       </SideTitle>
     </FlexContainer>
 
@@ -79,15 +82,54 @@ const SocialMedia = ()  => {
       {/*Card */}
     </FlexContainer>
 
-    <FlexContainer alignItems="end" width="7%" heigth="100%">
-      <SideTitle>
-        <span style={Styles.vowel[0]}>M</span>edia
-      </SideTitle>
-    </FlexContainer>
+
   </Section>
 
 
 
+
+
+  <Section ElementMobile={true} id = "social" width="71vw" left="14%" height="280vh" flexDirection="column" margin="10% 0 10% 0">
+     <FlexContainer heigth= "7%" justifyContent="center" alignItems="center" flexDirection="column">
+
+     <SideTitle >
+        <span style={Styles.vowel[0]}>S</span>ocial
+      </SideTitle>
+   
+    
+      
+      <SideTitle textAlign="end">
+        <span style={Styles.vowel[0]}>M</span>edia
+      </SideTitle>
+     </FlexContainer>
+    
+
+
+      <FlexContainer justifyContent="center" width="100%" heigth="93%">
+        <CardWrapper>
+          {cards.map(({ icon, label, link, cursor }, i) => {
+            return (
+              <Card
+                key={i}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 1 }}
+                target="_blank"
+                href={link}
+                cursor={cursor}
+                animate={{}}
+              >
+                {icon}
+                <Label>{label}</Label>
+              </Card>
+            );
+          })}
+        </CardWrapper>
+
+        {/*Card */}
+      </FlexContainer>
+
+    </Section>
+</>
   )
 }
 

@@ -7,7 +7,7 @@ export const FOOTER_FONT_SIZE = "1em";
 export const MENU_FONT_SIZE = "1.2em";
 export const LOGO_FONT_SIZE = "2em";
 export const TITLE_FONT_SIZE = "9vmin";
-export const SUBTITLE_FONT_SIZE = "7vmin";
+export const SUBTITLE_FONT_SIZE = "6vmin";
 export const BUYMEACOFFEE_FONT_SIZE = "7vmin";
 
 //variableFontsSize Mobile

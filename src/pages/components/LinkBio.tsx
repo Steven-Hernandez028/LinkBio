@@ -1,19 +1,17 @@
-import { useState } from "react";
-import {
-  Description,
-  FlexContainer,
-  InputText,
-  Button,
-} from "@/styles/styledComponents";
-import Image from "next/image";
-import { Styles } from "@/styles/styles";
-import SocialMedia from "./Mobile/SocialMedia";
-import Home from "./Mobile/Home";
+import React, { useState } from "react";
+import Home from "./Home";
+import SocialMedia from "./SocialMedia";
+import BannerDonate from "./BannerDonate";
+import ContactMe from "./ContactMe";
+import Footer from "./Footer";
 import Modal from "react-modal";
-import BannerDonate from "./Mobile/BannerDonate";
-import ContactMe from "./Mobile/ContactMe";
-import Footer from "./Mobile/Footer";
-import HamburgerMenu from "./Mobile/HamburgerMenu";
+import { Button, Description, FlexContainer, InputText } from '@/styles/styledComponents';
+
+import { Styles } from '@/styles/styles';
+
+
+
+
 
 
 const ModalEmail = ({
@@ -21,26 +19,31 @@ const ModalEmail = ({
   closeModal,
   handleOnChange,
   handleSubmit,
-  ToggleMsg,
+  ToggleMsg
 }: any) => {
-  const Message = (ToggleMsg: any) => {
-    if (ToggleMsg.ShowMessage === undefined) {
-      return "Did you donate? i would like to thank you, pleave leave you email here:";
-    } else if (ToggleMsg.ShowMessage === true) {
+
+
+  const Message =(ToggleMsg :any)=>{
+    if(ToggleMsg.ShowMessage === undefined){
+      return "Did you donate? i would like to thank you, pleave leave you email here:"
+    }else  if(ToggleMsg.ShowMessage === true){
       return "Thanks";
-    } else {
+    }else{
       return "Did you donate? i would like to thank you, pleave leave you email here:";
     }
-  };
+  }
   return (
     <Modal
       isOpen={modalIsOpen}
       onRequestClose={closeModal}
-      style={Styles.ModalMobile}
+      style={Styles.modal}
       ariaHideApp={false}
     >
       <FlexContainer flexDirection="column" width="100%" heigth="80%">
-        <Description bottom="0">{Message(ToggleMsg)}</Description>
+        <Description bottom="0">
+
+          {Message(ToggleMsg)}
+        </Description>
         <InputText
           onChange={(e) => handleOnChange(e)}
           marginLeft="0"
@@ -48,14 +51,14 @@ const ModalEmail = ({
         />
       </FlexContainer>
 
-      <Button onClick={handleSubmit} top="80%">
-        Send
-      </Button>
+      <Button onClick={handleSubmit} top="80%">Send</Button>
     </Modal>
   );
 };
 
-const MobileApp = () => {
+
+
+const LinkBio = () => {
   const [Mail, setMail] = useState<string>("");
   const [ToggleMsg, setToggleMsg] = useState<object>({
     Message: "Thanks!",
@@ -87,22 +90,22 @@ const MobileApp = () => {
       });
 
       const { message } = await res.json();
-      setToggleMsg((e) => {
-        return {
+      setToggleMsg(e=>{
+        return{
           ...e,
           ShowMessage: true,
-        };
-      });
-      setTimeout(() => {
-        setIsOpen(false);
-        setToggleMsg((e) => {
-          return {
+        }
+      })
+      setTimeout(()=>{
+        setIsOpen(false)
+        setToggleMsg(e=>{
+          return{
             ...e,
-            ShowMessage: false,
-          };
-        });
+            ShowMessage:false,
+          }
+        })
         setMail("");
-      }, 1000);
+      },1000)
     } catch (error) {
       console.error(error);
     }
@@ -111,16 +114,11 @@ const MobileApp = () => {
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setMail(e.target.value);
   };
-
- 
   return (
     <>
-   
-
-      <HamburgerMenu/>
       <Home />
-      <SocialMedia />
 
+      <SocialMedia/>
       <BannerDonate handleModal={handleModal} />
 
       {modalIsOpen ? (
@@ -130,6 +128,7 @@ const MobileApp = () => {
           handleOnChange={handleOnChange}
           handleSubmit={handleSubmit}
           ToggleMsg={ToggleMsg}
+        
         />
       ) : null}
 
@@ -138,4 +137,4 @@ const MobileApp = () => {
     </>
   );
 };
-export default MobileApp;
+export default LinkBio;

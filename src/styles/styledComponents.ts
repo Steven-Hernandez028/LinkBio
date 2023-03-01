@@ -56,8 +56,15 @@ const INCOSOLATA = inconsolata.style.fontFamily;
 const INCOSOLATA_PARRAGRAH = incosolata_p.style.fontFamily;
 const KARLA = karla.style.fontFamily;
 //  border: 2px solid ${(props) => props.borderColor || "red"};
+const ElementMobile = (props?:boolean)=>{
+  return props === true? "flex" : "none"
+}
 
-export const FlexContainer = styled.div<PropsContainer>`
+const ElementDesktop = (props?:boolean)=>{
+  return props === true? "flex" : "none"
+
+}
+export const FlexContainer = styled(motion.div)<PropsContainer>`
   display: flex;
   position: ${(props) => props.position || "relative"};
   background: ${(props) => props.background || "none"};
@@ -75,6 +82,7 @@ export const FlexContainer = styled.div<PropsContainer>`
 
   @media (max-width:600px){
     box-shadow: ${(props)=>props.boxShadow || "none"};
+  
   }
 `;
 //
@@ -83,8 +91,8 @@ export const FlexContainer = styled.div<PropsContainer>`
 //  
 // 
 //
-export const Section = styled.section<PropsSection>`
-  display: flex;
+export const Section = styled(motion.section)<PropsSection>`
+  display: ${(props)=>ElementDesktop(props.ElementDesktop)};
   position: ${(props) => props.position || "relative"};
   flex-direction: ${(props) => props.flexDirection || "column"};
   width: ${(props) => props.width || "80.5vw"};
@@ -95,11 +103,11 @@ export const Section = styled.section<PropsSection>`
   margin: ${(props)=> props.margin || "0px"};
 
   @media (max-width: 600px) {
-    
+    display:${(props)=>ElementMobile(props.ElementMobile)};
   }
 `;
 
-export const MenuWrap = styled.div`
+export const MenuWrap = styled(motion.div)`
   height: 100%;
   display: flex;
   align-items: center;
@@ -117,7 +125,7 @@ const setMarginLeft = (span: string) => {
   return `margin-left: ${margin}vw;`;
 };
 
-export const ItemMenu = styled.a<itemProps>`
+export const ItemMenu = styled(motion.a)<itemProps>`
   text-decoration: none;
   ${(props) => (props.xs ? setMarginLeft(props.xs) : "margin-left: 5.4vw;")};
   color: ${COLOR_TOP_FONT};
@@ -129,12 +137,12 @@ export const ItemMenu = styled.a<itemProps>`
   }
 
   @media only screen and (max-width:600px){
-    font-size: 8vmin;
+    font-size: 5vmin;
     text-align:center;
   }
 `;
 
-export const Logo = styled.h3<LogoProps>`
+export const Logo = styled(motion.h3)<LogoProps>`
   margin-left: ${(props) => props.marginLeft || "3%"};
   color: ${COLOR_TOP_FONT};
   font-size: ${(props) => props.fontSize || LOGO_FONT_SIZE};
@@ -143,7 +151,7 @@ export const Logo = styled.h3<LogoProps>`
   width: ${(props) => props.width || "0%"};
 `;
 // border-radius:16% 14% 45% 95% / 27% 52% 48% 23% ;
-export const RoundBox = styled.div`
+export const RoundBox = styled(motion.div)`
   position: relative;
   width: 90%;
   height: 90%;
@@ -160,7 +168,7 @@ export const RoundBox = styled.div`
   }
 `;
 
-export const Title = styled.h1<TitleProps>`
+export const Title = styled(motion.h1)<TitleProps>`
 
   width: ${(props) => props.width || "auto"};
   height: ${(props) => props.height || "auto"};
@@ -197,7 +205,7 @@ export const SideTitle = styled(Title)`
 `;
 
 //PARRAGRAH_FONT_SIZE
-export const Description = styled.p<PropsDescription>`
+export const Description = styled(motion.p)<PropsDescription>`
   position: ${(props) => props.position || "relative"};
   text-align: ${(props) => props.textAlign || "center"};
   bottom: ${(props) => props.bottom || "25%"};
@@ -221,7 +229,7 @@ export const Footer = styled.footer``;
 
 //  border: 2px solid #534;
 
-export const CardWrapper = styled.div`
+export const CardWrapper = styled(motion.div)`
   width: 80%;
   height: 80%;
   display: grid;
@@ -269,7 +277,7 @@ export const Card = styled(motion.a)<CardProps>`
   }
 `;
 
-export const Label = styled.p<LabelProps>`
+export const Label = styled(motion.p)<LabelProps>`
   position: relative;
   font-family: ${INCOSOLATA_PARRAGRAH};
   font-size: 2vmin;
@@ -279,7 +287,7 @@ export const Label = styled.p<LabelProps>`
     font-size: ${(props)=>props.fontSize || "5vmin"};
   }
 `;
-export const SubTitle = styled.h2`
+export const SubTitle = styled(motion.h2)`
   position: absolute;
   top: 20%;
   left: 30%;
@@ -301,7 +309,7 @@ export const SubTitle = styled.h2`
   }
 `;
 //0% 100% 0% 100% / 100% 24% 76% 0%
-export const DonateButton = styled.a<ButtonProps>`
+export const DonateButton = styled(motion.a)<ButtonProps>`
   position: absolute;
   text-decoration: none;
   width: 9%;
@@ -333,7 +341,7 @@ export const DonateButton = styled.a<ButtonProps>`
   height:8%;
   }
 `;
-export const Button = styled.button<ButtonProps>`
+export const Button = styled(motion.button)<ButtonProps>`
   position: absolute;
   width: 19%;
   height: 5%;
@@ -359,7 +367,7 @@ export const Button = styled.button<ButtonProps>`
 `;
 //  border: 2px solid red;
 
-export const Form = styled.form<FormProps>`
+export const Form = styled(motion.form)<FormProps>`
   position: relative;
   display: flex;
   flex-direction: row;
@@ -378,7 +386,7 @@ export const Form = styled.form<FormProps>`
   }
 `;
 
-export const InputText = styled.input<ButtonProps>`
+export const InputText = styled(motion.input)<ButtonProps>`
   position: relative;
   border-bottom: 0.5px solid ${COLOR_INPUT_TEXT};
   padding: 10px;
@@ -401,7 +409,7 @@ export const InputText = styled.input<ButtonProps>`
   }
 `;
 
-export const Textarea = styled.textarea`
+export const Textarea = styled(motion.textarea)`
   padding: 10px;
   color: white;
   background: none;
@@ -429,7 +437,7 @@ export const Textarea = styled.textarea`
   }
 `;
 //INCOSOLATA_PARRAGRAH
-export const LinkFooter = styled.a`
+export const LinkFooter = styled(motion.a)`
   text-decoration: none;
   font-family: ${INCOSOLATA_PARRAGRAH};
   font-size: ${FOOTER_FONT_SIZE};
