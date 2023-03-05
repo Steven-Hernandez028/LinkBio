@@ -6,6 +6,7 @@ const nextConfig = {
     API_KEY: process.env.API_KEY,
     FROM_EMAIL: process.env.FROM_EMAIL,
     PAYPAL_ID:process.env.PAYPAL_ID,
+    TEMPLATE_ID:process.env.TEMPLATE_ID,
   }
 }
 

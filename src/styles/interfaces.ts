@@ -2,33 +2,46 @@ export interface PropsContainer {
     borderColor?: string;
     heigth?: string;
     width?: string;
-    justifyContent?: string;
+    justifycontent?: string;
     wrap?: string;
-    flexDirection?: string;
-    alignItems?: string;
+    flexdirection?: string;
+    alignitems?: string;
     left?: string;
-    paddingLeft?:string,
+    paddingleft?:string,
     border?:string,
     background?:string;
-    borderRadius?:string;
+    borderradius?:string;
     position?:string;
     margin?:string;
-    boxShadow?:string;
-    EnableElementMobile?:string;
-    EnableElementDesktop?:string;
+    boxshadow?:string;
+    top?:string;
+    flexdirectionmobile?:string;
+    heightmobile?:string;
+    widthmobile?:string;
+    justifycontentmobile?:string;
+    marginmobile?:string;
+    alignitemsmobile?:string;
+    displaymobile?:string;
+    leftmobile?:string;
+    topmobile?:string;
+ 
   }
   export  interface TitleProps{
-    marginLeft?:string;
+    marginleft?:string;
     width?: string;
     height?:string;
-    textAlign?:string;
+    textalign?:string;
+    marginmobile?:string;
   
   }
   export interface PropsDescription {
     position?:string;
     bottom?: string;
     width?: string;
-    textAlign?:string;
+    bottommobile?:string;
+    textalign?:string;
+    marginmobile?:string;
+
   }
 export interface FormProps{
   border?:string;
@@ -36,9 +49,11 @@ export interface FormProps{
   export interface LabelProps {
     left?: string;
     fontSize?:string;
+    leftmobile?:string;
+    topmobile?:string;
   }
   export interface PropsSection {
-    flexDirection?: string;
+    flexdirection?: string;
     height?: string;
     width?: string;
     left?: string;
@@ -46,10 +61,16 @@ export interface FormProps{
     radius?: string;
     position?:string;
     overflow?:string;
-    ElementMobile?:boolean;
-    ElementDesktop?:boolean;
-    
     margin?:string;
+    brackgroundmobile?:string;
+    justifycontentmobile?:string;
+    elementmobile?:string;
+    elementdesktop?:string;
+    heigthmobile?:string;
+    marginmobile?:string;
+    leftmobile?:string;
+    widthmobile?:string;
+    bordermobile?:string;
   }
   
   export interface itemProps {
@@ -58,16 +79,19 @@ export interface FormProps{
   
   export interface LogoProps{
     fontSize?:string,
-    textAlign?:string,
+    textalign?:string,
     width?:string,
-    marginLeft?:string,
+    marginleft?:string,
+    textalignmobile?:string;
+    fontsizemobile?:string;
   }
   export interface CardProps {
     cursor? :string;
   }
   export interface ButtonProps{
     top? :string;
-    marginLeft?:string;
+    marginleft?:string;
     fontSize?:string;
+    widthmobile?:string;
   }
   

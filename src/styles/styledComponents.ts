@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Inconsolata } from "@next/font/google";
+import { Inconsolata, Prosto_One } from "@next/font/google";
 import { motion } from "framer-motion";
 
 import { Karla } from "@next/font/google";
@@ -24,7 +24,7 @@ import {
   BUYMEACOFFEE_FONT_SIZE,
   MOBILE_SUBTITLE_FONT_SIZE,
   FOOTER_FONT_SIZE,
-  MOBILE_TITLE_FONT_SIZE
+  MOBILE_TITLE_FONT_SIZE,
 } from "./styles";
 import {
   COLOR_TOP_FONT,
@@ -56,14 +56,7 @@ const INCOSOLATA = inconsolata.style.fontFamily;
 const INCOSOLATA_PARRAGRAH = incosolata_p.style.fontFamily;
 const KARLA = karla.style.fontFamily;
 //  border: 2px solid ${(props) => props.borderColor || "red"};
-const ElementMobile = (props?:boolean)=>{
-  return props === true? "flex" : "none"
-}
 
-const ElementDesktop = (props?:boolean)=>{
-  return props === true? "flex" : "none"
-
-}
 export const FlexContainer = styled(motion.div)<PropsContainer>`
   display: flex;
   position: ${(props) => props.position || "relative"};
@@ -71,39 +64,49 @@ export const FlexContainer = styled(motion.div)<PropsContainer>`
   height: ${(props) => props.heigth || "100px"};
   width: ${(props) => props.width || "100%"};
   border: ${(props) => props.border || "none"};
-  margin : ${(props) => props.margin || "0px"};
-  flex-direction: ${(props) => props.flexDirection || "row"};
-  align-items: ${(props) => props.alignItems || "center"};
-  padding-left: ${(props) => props.paddingLeft || "0%"};
-  justify-content: ${(props) => props.justifyContent || "space-between"};
+  margin: ${(props) => props.margin || "0px"};
+  flex-direction: ${(props) => props.flexdirection || "row"};
+  align-items: ${(props) => props.alignitems || "center"};
+  padding-left: ${(props) => props.paddingleft || "0%"};
+  justify-content: ${(props) => props.justifycontent || "space-between"};
   flex-wrap: ${(props) => props.wrap || "none"};
   left: ${(props) => props.left || "0%;"};
-  border-radius: ${(props) => props.borderRadius || "none"};
-
-  @media (max-width:600px){
-    box-shadow: ${(props)=>props.boxShadow || "none"};
-  
+  border-radius: ${(props) => props.borderradius || "none"};
+  top: ${(props)=>props.top || "0px"};
+    @media (max-width: 600px) {
+    box-shadow: ${(props) => props.boxshadow || "none"};
+    display:${(props)=>props.displaymobile || "flex"};
+    background: none;
+    margin: ${(props) => props.marginmobile || "0px"};
+    flex-direction: ${(props) => props.flexdirectionmobile || "row"};
+    height: ${(props) => props.heightmobile || "auto"};
+    width: ${(props) => props.widthmobile};
+    justify-content: ${(props) => props.justifycontentmobile};
+    aling-items: ${(props) => props.alignitemsmobile};
+    left: ${(props)=>props.leftmobile || "0px"};
+    top:${(props)=>props.topmobile || "0px"};
   }
 `;
-//
-//box-shadow: -4px 0px 15px -7px rgb(255, 111, 0, 0.4);
-// border-radius: ${(props) => setRadius(props.radius)}
-//  
-// 
-//
-export const Section = styled(motion.section)<PropsSection>`
-  display: ${(props)=>ElementDesktop(props.ElementDesktop)};
+
+export const Section = styled.section<PropsSection>`
+display:flex;
   position: ${(props) => props.position || "relative"};
-  flex-direction: ${(props) => props.flexDirection || "column"};
+  flex-direction: ${(props) => props.flexdirection || "column"};
   width: ${(props) => props.width || "80.5vw"};
   left: ${(props) => props.left || "9.3%"};
-  overflow: ${(props)=>props.overflow || "hidden"};
+  overflow: ${(props) => props.overflow || "hidden"};
   height: ${(props) => props.height || "100vh"};
   background: ${(props) => props.background || "none"};
-  margin: ${(props)=> props.margin || "0px"};
-
+  margin: ${(props) => props.margin || "0px"};
   @media (max-width: 600px) {
-    display:${(props)=>ElementMobile(props.ElementMobile)};
+    flex-direction: column;
+    justify-content:${(props)=>props.justifycontentmobile || "auto"};
+    height: ${(props) => props.heigthmobile || "100vh"};
+    margin: ${(props) => props.marginmobile || "0px"};
+    width: ${(props) => props.widthmobile || "71vw"};
+    left: ${(props) => props.leftmobile || "14%"};
+    border:${(props)=>props.bordermobile || "none"};
+    background: ${(props)=>props.brackgroundmobile ||"none"};
   }
 `;
 
@@ -119,7 +122,7 @@ export const MenuWrap = styled(motion.div)`
     ${"display:none;"};
   }
 `;
-const setMarginLeft = (span: string) => {
+const setmarginleft = (span: string) => {
   if (!span) return;
   let margin = (Number(span) / 12) * 100;
   return `margin-left: ${margin}vw;`;
@@ -127,7 +130,7 @@ const setMarginLeft = (span: string) => {
 
 export const ItemMenu = styled(motion.a)<itemProps>`
   text-decoration: none;
-  ${(props) => (props.xs ? setMarginLeft(props.xs) : "margin-left: 5.4vw;")};
+  ${(props) => (props.xs ? setmarginleft(props.xs) : "margin-left: 5.4vw;")};
   color: ${COLOR_TOP_FONT};
   font-family: ${INCOSOLATA};
   font-size: ${MENU_FONT_SIZE};
@@ -136,21 +139,25 @@ export const ItemMenu = styled(motion.a)<itemProps>`
     ${"font-size: 1rem;"};
   }
 
-  @media only screen and (max-width:600px){
+  @media only screen and (max-width: 600px) {
     font-size: 5vmin;
-    text-align:center;
+    text-align: center;
   }
 `;
 
 export const Logo = styled(motion.h3)<LogoProps>`
-  margin-left: ${(props) => props.marginLeft || "3%"};
+  margin-left: ${(props) => props.marginleft || "3%"};
   color: ${COLOR_TOP_FONT};
   font-size: ${(props) => props.fontSize || LOGO_FONT_SIZE};
-  text-align: ${(props) => props.textAlign || "none"};
+  text-align: ${(props) => props.textalign || "none"};
   font-family: ${INCOSOLATA};
   width: ${(props) => props.width || "0%"};
+  @media (max-width: 600px) {
+    text-align: ${(props)=>props.textalignmobile || "center"};
+    font-size:${(props)=>props.fontsizemobile};
+    width: 100%;
+  }
 `;
-// border-radius:16% 14% 45% 95% / 27% 52% 48% 23% ;
 export const RoundBox = styled(motion.div)`
   position: relative;
   width: 90%;
@@ -160,7 +167,7 @@ export const RoundBox = styled(motion.div)`
   border-radius: 16% 14% 45% 95% / 27% 52% 48% 23%;
   @media (max-width: 600px) {
     width: 40%;
-    height: 70%;
+    height: 90%;
     left: 0px;
     border-radius: 50%;
     border: 1px solid ${COLOR_PRIMARY};
@@ -169,65 +176,89 @@ export const RoundBox = styled(motion.div)`
 `;
 
 export const Title = styled(motion.h1)<TitleProps>`
-
   width: ${(props) => props.width || "auto"};
   height: ${(props) => props.height || "auto"};
-  text-align: ${(props) => props.textAlign || "auto"};
+  text-align: ${(props) => props.textalign || "auto"};
   font-family: ${KARLA};
   font-size: ${TITLE_FONT_SIZE};
   color: white;
-  margin-left: ${(props) => props.marginLeft || "4%"};
+  margin-left: ${(props) => props.marginleft || "4%"};
 
-
-  @media (max-width:600px){
-  font-size: ${MOBILE_TITLE_FONT_SIZE};
-  
+  @media (max-width: 600px) {
+    font-size: ${MOBILE_TITLE_FONT_SIZE};
+    position: relative;
+    text-align: center;
+    width: 100%;
+    margin-left: 0px;
+    height: 10%;
   }
 `;
 
-//  border: 1px solid #f3f;
+export const Footer = styled(motion.footer)<PropsSection>`
+display:flex;
+position: ${(props) => props.position || "relative"};
+flex-direction: ${(props) => props.flexdirection || "column"};
+width: ${(props) => props.width || "80.5vw"};
+left: ${(props) => props.left || "9.3%"};
+overflow: ${(props) => props.overflow || "hidden"};
+height: ${(props) => props.height || "100vh"};
+background: ${(props) => props.background || "none"};
+margin: ${(props) => props.margin || "0px"};
+@media (max-width: 600px) {
+  flex-direction: column;
+  justify-content:${(props)=>props.justifycontentmobile || "auto"};
+  height: ${(props) => props.heigthmobile || "100vh"};
+  margin: ${(props) => props.marginmobile || "0px"};
+  width: ${(props) => props.widthmobile || "71vw"};
+  left: ${(props) => props.leftmobile || "14%"};
+
+`
+
+
 
 export const SideTitle = styled(Title)`
   margin: 10% 0 10% 0;
   writing-mode: vertical-lr;
   text-orientation: upright;
   font-size: ${SUBTITLE_FONT_SIZE};
-  
-  @media (max-width:600px){
+
+  @media (max-width: 600px) {
     font-size: ${MOBILE_SUBTITLE_FONT_SIZE};
-  width:80%;
+    width: 100%;
+    height: 100%;
     writing-mode: horizontal-tb;
     text-orientation: initial;
-    margin: 0 10% 0 10%;
-    text-align: ${(props)=>props.textAlign || "auto"};
-
+    margin:${(props)=>props.marginmobile|| "0 10% 0 10%"} ;
+    text-align: ${(props) => props.textalign || "auto"};
   }
 `;
 
 //PARRAGRAH_FONT_SIZE
 export const Description = styled(motion.p)<PropsDescription>`
   position: ${(props) => props.position || "relative"};
-  text-align: ${(props) => props.textAlign || "center"};
+  text-align: ${(props) => props.textalign || "center"};
   bottom: ${(props) => props.bottom || "25%"};
   width: ${(props) => props.width || "auto"};
   font-family: ${INCOSOLATA_PARRAGRAH};
+
   font-size: ${PARRAGRAH_FONT_SIZE};
   margin-left: 4%;
   margin-right: 4%;
   line-height: 1.8rem;
   color: white;
-   @media (max-width: 1100px){
+  @media (max-width: 1100px) {
     font-size: 2vmin;
   }
   @media (max-width: 600px) {
+    position: relative;
     font-size: 4vmin;
+    bottom: ${(props) => props.bottommobile || "25%"};
+    text-align: justify;
+    margin: ${(props) => props.marginmobile};
   }
- 
 `;
 
-export const Footer = styled.footer``;
 
-//  border: 2px solid #534;
 
 export const CardWrapper = styled(motion.div)`
   width: 80%;
@@ -246,6 +277,10 @@ export const CardWrapper = styled(motion.div)`
     grid-template-columns 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
      grid-gap: 2%;
+
+     @media(max-width:600px){
+      margin-top:20%;
+     }
   }
 `;
 //  border: 1px solid ${COLOR_ICON};
@@ -283,29 +318,29 @@ export const Label = styled(motion.p)<LabelProps>`
   font-size: 2vmin;
   color: white;
   left: ${(props) => props.left || "0%"};
-  @media (max-width: 600px){
-    font-size: ${(props)=>props.fontSize || "5vmin"};
+  @media (max-width: 600px) {
+    font-size: ${(props) => props.fontSize || "5vmin"};
+    left:${(props)=>props.leftmobile || "10%"};
+    top:${(props)=>props.topmobile || "0px"};
   }
 `;
 export const SubTitle = styled(motion.h2)`
   position: absolute;
-  top: 20%;
+  top: 25%;
   left: 30%;
   width: 60%;
   color: white;
   font-size: ${BUYMEACOFFEE_FONT_SIZE};
   font-family: ${TITLE_FONT_SIZE};
-  @media (max-width: 1359px){
-    font-size:5vmin;
+  @media (max-width: 1359px) {
+    font-size: 5vmin;
   }
-  @media (max-width:600px){
-    position:relative;
-    left: 30%;
-    top:0px;
-  
-    width:60%;
+  @media (max-width: 600px) {
+    position: relative;
+    left: 12%;
+    top: 0px;
+    width: 100%;
     font-size: ${MOBILE_SUBTITLE_FONT_SIZE};
-
   }
 `;
 //0% 100% 0% 100% / 100% 24% 76% 0%
@@ -315,7 +350,7 @@ export const DonateButton = styled(motion.a)<ButtonProps>`
   width: 9%;
   height: 15%;
   text-justify: center;
-  left: 40%;
+  left: 42%;
   appearance: button;
   text-align: center;
   display: flex;
@@ -325,7 +360,7 @@ export const DonateButton = styled(motion.a)<ButtonProps>`
   color: white;
   background: ${COLOR_ICON_2};
   font-family: ${INCOSOLATA_PARRAGRAH};
-  font-size:2vmin;
+  font-size: 2vmin;
   border: none;
   padding: 5px;
   transition: all 0.1s ease-in;
@@ -334,23 +369,25 @@ export const DonateButton = styled(motion.a)<ButtonProps>`
     background: #424;
   }
 
-  @media (max-width: 600px){
-    font-size:4vmin;
-      left: 36%;
+  @media (max-width: 600px) {
+    position: relative;
+    font-size: 4vmin;
+    left:0px;
+    top:5%;
     width: 25%;
-  height:8%;
+    height: 8%;
   }
 `;
 export const Button = styled(motion.button)<ButtonProps>`
   position: absolute;
   width: 19%;
-  height: 5%;
+  height: 6%;
   left: 40%;
   top: ${(props) => props.top || "70%"};
   color: white;
   background: ${COLOR_ICON_2};
   font-family: ${INCOSOLATA_PARRAGRAH};
-  font-size:2vmin;
+  font-size: 2vmin;
   border: none;
   padding: 5px;
   transition: all 0.1s ease-in;
@@ -358,20 +395,21 @@ export const Button = styled(motion.button)<ButtonProps>`
   &:active {
     background: #424;
   }
-  @media (max-width:600px){
-      width: 40%;
-  height: 7%;
-    left:30%;
-    font-size:4vmin;
+  @media (max-width: 600px) {
+    width: ${(props)=>props.widthmobile || "30%"};
+    height: 6%;
+    left: 35%;
+    font-size: 4vmin;
   }
 `;
-//  border: 2px solid red;
+
 
 export const Form = styled(motion.form)<FormProps>`
   position: relative;
   display: flex;
   flex-direction: row;
   border: ${(props) => props.border || "none"};
+  background: #060528;
   width: 70%;
   height: 80%;
   align-items: center;
@@ -380,9 +418,13 @@ export const Form = styled(motion.form)<FormProps>`
   box-shadow: -4px 0px 15px -7px rgb(255, 111, 0, 0.4);
   left: 0%;
 
-  @media (max-width: 600px){
+  @media (max-width: 600px) {
+    background:none;
+    flex-direction:column;
     box-shadow: none;
     width: 100%;
+    height:100%;
+ 
   }
 `;
 
@@ -401,11 +443,14 @@ export const InputText = styled(motion.input)<ButtonProps>`
   font-size: ${PARRAGRAH_FONT_SIZE};
   font-family: ${INCOSOLATA_PARRAGRAH};
   margin-bottom: 10%;
-  margin-left: ${(props) => props.marginLeft || "10%"};
+  margin-left: ${(props) => props.marginleft || "10%"};
 
-  @media (max-width:600px){
+  @media (max-width: 600px) {
     width: 70%;
-    font-size:${(props=>props.fontSize || PARRAGRAH_FONT_SIZE)};
+    margin:0px;
+    margin-bottom:10%;
+    left:10%;
+    font-size: ${(props) => props.fontSize || PARRAGRAH_FONT_SIZE};
   }
 `;
 
@@ -427,13 +472,12 @@ export const Textarea = styled(motion.textarea)`
   position: relative;
   border-bottom: 0.5px solid ${COLOR_INPUT_TEXT};
 
-  @media (max-width:600px){
-
-  max-width: 70%;
-  min-width: 70dsdf%;
-  min-height: 20%;
-  max-height: 20%;
-  font-size:4vmin;
+  @media (max-width: 600px) {
+    max-width: 70%;
+    min-width: 70%;
+    min-height: 20%;
+    max-height: 20%;
+    font-size: 4vmin;
   }
 `;
 //INCOSOLATA_PARRAGRAH
@@ -442,23 +486,16 @@ export const LinkFooter = styled(motion.a)`
   font-family: ${INCOSOLATA_PARRAGRAH};
   font-size: ${FOOTER_FONT_SIZE};
   color: white;
+  @media (max-width:600px){
+    margin:5%;
+  }
 `;
-// export const Label = styled.label`
 
-// `
-
-//HamburguerMenu
-// .ham{
-//     top:27px;
-//     left:120%;
-//     width: 30px;
-//     height: 30px;
-// }
-// @media only screen and (max-width: 768px) {
-//         .ham{
-//             top:20px;
-//         }
-// }
+export const HamburguerMenuWrapper = styled(motion.div)`
+  @media (min-width: 600px) {
+    display: none;
+  }
+`;
 
 export const HamButton = styled.button`
   position: absolute;

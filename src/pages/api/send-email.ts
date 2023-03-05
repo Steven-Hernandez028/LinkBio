@@ -11,7 +11,7 @@ export default async function sendEmail( req: NextApiRequest, res: NextApiRespon
 
         to: Mail,
         from: process.env.FROM_EMAIL!,
-        templateId:"d-69a6fe32b6704d6893217dc3a073bdfa"
+        templateId: process.env.TEMPLATE_ID!,
       }
       try{
         await sgMail.send(msg)

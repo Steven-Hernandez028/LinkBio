@@ -2,11 +2,10 @@ import * as React from "react";
 import * as THREE from "three";
 import * as random from "maath/random";
 import Head from "next/head";
-import { useEffect, useState, useRef } from "react";
+import {  useState, useRef } from "react";
 import { Canvas, extend, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial, Stats } from "@react-three/drei";
 import LinkBio from "./components/LinkBio";
-import useWindow from "@/helper/useWindow";
 extend(THREE);
 
 
@@ -45,21 +44,25 @@ export default function Webpage() {
   // }
 
   const Stars = (props: any) => {
-    const ref = useRef<THREE.Points>(null);
-    const dots = React.useMemo(()=> new Float32Array(4000),[])
+    const firstRef = useRef<THREE.Points>(null);
+    const secondRef = useRef<THREE.Points>(null);
+    const dots = React.useMemo(()=> new Float32Array(2000),[])
     const [sphere] = useState(() =>
-      random.inSphere(dots, { radius: 4.5 })
+      random.inSphere(dots, { radius: 5.5 })
     );
 
     useFrame((state, delta) => {
-      ref.current!.rotation.x -= delta / 20;
-      ref.current!.rotation.y -= delta / 30;
+      firstRef.current!.rotation.x -= delta / 30;
+      firstRef.current!.rotation.y -= delta / 50;
+
+      secondRef.current!.rotation.z -= delta /20;
+      secondRef.current!.rotation.y += delta /50;
     });
 
     return (
-      <group rotation={[0, 0, Math.PI / 4]}>
+      <group rotation={[10, 5, Math.PI / 4]}>
         <Points
-          ref={ref}
+          ref={firstRef}
           positions={sphere}
           stride={3}
           frustumCulled={false}
@@ -69,6 +72,21 @@ export default function Webpage() {
             transparent
             color="#f30"
             size={0.02}
+            sizeAttenuation={true}
+            depthWrite={false}
+          />
+        </Points>
+        <Points
+          ref={secondRef}
+          positions={sphere}
+          stride={3}
+          frustumCulled={false}
+          {...props}
+        >
+          <PointMaterial
+            transparent
+            color="#ff0"
+            size={0.03}
             sizeAttenuation={true}
             depthWrite={false}
           />
@@ -89,14 +107,13 @@ export default function Webpage() {
 
       <main style={{overflow:"hidden",position:"relative"}}>     
  
-      {/* <Canvas
+      <Canvas
           style={{
             width: "100vw",
-            height: "100%",
-            position: "absolute",
+
+            position: "fixed",
           }}
         >
-            <Stats/>
             <Stars />
           <directionalLight
             color="#ffffff"
@@ -106,9 +123,8 @@ export default function Webpage() {
           <hemisphereLight intensity={0.2} color="#fff" groundColor="blue" />
 
        
-        </Canvas>  */}
+        </Canvas> 
         <LinkBio/>
-        {/* {display(width)} */}
       </main>
     </>
   );

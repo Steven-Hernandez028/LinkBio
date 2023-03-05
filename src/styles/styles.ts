@@ -8,7 +8,7 @@ export const MENU_FONT_SIZE = "1.2em";
 export const LOGO_FONT_SIZE = "2em";
 export const TITLE_FONT_SIZE = "9vmin";
 export const SUBTITLE_FONT_SIZE = "6vmin";
-export const BUYMEACOFFEE_FONT_SIZE = "7vmin";
+export const BUYMEACOFFEE_FONT_SIZE = "6vmin";
 
 //variableFontsSize Mobile
 export const MOBILE_TITLE_FONT_SIZE = "12vmin";
@@ -61,10 +61,10 @@ export const Styles  = {
     {
       color: `${COLOR_ICON_2}`,
       width: "40%",
-      height: "30%",
+      height: "40%",
       position:"absolute",
       left:"70%",
-      top: "60%",
+      top: "70%",
       transform: "rotate(-0.1turn)"
     },
     {
@@ -90,7 +90,7 @@ export const Styles  = {
       top: '50%',
       left: '50%',
       right:'auto',
-      width:"30%",
+      width:"50%",
       height:"30%",
       bottom: 'auto',
       overflow:"hidden",

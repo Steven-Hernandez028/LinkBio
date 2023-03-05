@@ -1,7 +1,7 @@
 import React,{useState} from "react";
 import { slide as Menu } from "react-burger-menu";
 import { RxCross1, RxHamburgerMenu } from "react-icons/rx";
-import { FlexContainer, ItemMenu } from "@/styles/styledComponents";
+import { FlexContainer, ItemMenu,HamburguerMenuWrapper} from "@/styles/styledComponents";
 
 
 var styles = {
@@ -82,7 +82,7 @@ const HamburgerMenu = () => {
 
 
   return (
-    <div>
+    <HamburguerMenuWrapper >
       <Menu
         isOpen={isOpenMenu}
         right
@@ -105,7 +105,7 @@ const HamburgerMenu = () => {
           Contact Me
         </ItemMenu>
       </Menu>
-      </div>
+      </HamburguerMenuWrapper>
   );
 };
 

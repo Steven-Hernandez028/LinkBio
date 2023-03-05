@@ -3,7 +3,7 @@ import Home from "./Home";
 import SocialMedia from "./SocialMedia";
 import BannerDonate from "./BannerDonate";
 import ContactMe from "./ContactMe";
-import Footer from "./Footer";
+import Footerc from "./Footer";
 import Modal from "react-modal";
 import { Button, Description, FlexContainer, InputText } from '@/styles/styledComponents';
 
@@ -39,19 +39,19 @@ const ModalEmail = ({
       style={Styles.modal}
       ariaHideApp={false}
     >
-      <FlexContainer flexDirection="column" width="100%" heigth="80%">
+      <FlexContainer flexdirection="column" width="100%" heigth="80%" flexdirectionmobile="column" widthmobile="100%">
         <Description bottom="0">
 
           {Message(ToggleMsg)}
         </Description>
         <InputText
           onChange={(e) => handleOnChange(e)}
-          marginLeft="0"
+          marginleft="0"
           type="input"
         />
       </FlexContainer>
 
-      <Button onClick={handleSubmit} top="80%">Send</Button>
+      <Button onClick={handleSubmit}  top="80%">Send</Button>
     </Modal>
   );
 };
@@ -133,7 +133,7 @@ const LinkBio = () => {
       ) : null}
 
       <ContactMe />
-      <Footer />
+      <Footerc />
     </>
   );
 };
