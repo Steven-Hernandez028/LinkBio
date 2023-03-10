@@ -48,10 +48,11 @@ const ModalEmail = ({
           onChange={(e) => handleOnChange(e)}
           marginleft="0"
           type="input"
+          leftmobile="0"
         />
       </FlexContainer>
 
-      <Button onClick={handleSubmit}  top="80%">Send</Button>
+      <Button heightmobile = "11%" height= "10%"onClick={handleSubmit}  top="80%">Send</Button>
     </Modal>
   );
 };

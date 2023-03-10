@@ -312,9 +312,9 @@ export const Card = styled(motion.a)<CardProps>`
   }
 `;
 
-export const Label = styled(motion.p)<LabelProps>`
+export const Label = styled(motion.label)<LabelProps>`
   position: relative;
-  font-family: ${INCOSOLATA_PARRAGRAH};
+  font-family:${PARRAGRAH_FONT_SIZE};
   font-size: 2vmin;
   color: white;
   left: ${(props) => props.left || "0%"};
@@ -381,7 +381,7 @@ export const DonateButton = styled(motion.a)<ButtonProps>`
 export const Button = styled(motion.button)<ButtonProps>`
   position: absolute;
   width: 19%;
-  height: 6%;
+  height:${(props)=>props.height || "6%"};
   left: 40%;
   top: ${(props) => props.top || "70%"};
   color: white;
@@ -397,7 +397,7 @@ export const Button = styled(motion.button)<ButtonProps>`
   }
   @media (max-width: 600px) {
     width: ${(props)=>props.widthmobile || "30%"};
-    height: 6%;
+    height: ${(props)=>props.heightmobile || "6%"};
     left: 35%;
     font-size: 4vmin;
   }
@@ -448,8 +448,8 @@ export const InputText = styled(motion.input)<ButtonProps>`
   @media (max-width: 600px) {
     width: 70%;
     margin:0px;
-    margin-bottom:10%;
-    left:10%;
+    margin-bottom:${(props)=>props.margibottommobile || "10%"};
+    left:${(props)=>props.leftmobile || "10%"};
     font-size: ${(props) => props.fontSize || PARRAGRAH_FONT_SIZE};
   }
 `;

@@ -5,7 +5,6 @@ import {
   SubTitle,
   DonateButton,
 } from "@/styles/styledComponents";
-import { BiCoffeeTogo } from "react-icons/bi";
 import { Styles } from "@/styles/styles";
 
 const BannerDonate = ({ handleModal }: any) => {
@@ -51,7 +50,8 @@ const BannerDonate = ({ handleModal }: any) => {
           <Description
             width="85%"
             bottom="10%"
-            bottommobile="0 "
+            bottommobile="10%"
+            
             marginmobile="0px"
             textalign="justify"
           >

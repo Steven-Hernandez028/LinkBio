@@ -91,7 +91,13 @@ export interface FormProps{
   export interface ButtonProps{
     top? :string;
     marginleft?:string;
+    height?:string;
     fontSize?:string;
     widthmobile?:string;
+    leftmobile?:string;
+    topmobile?:string;
+    margibottommobile?:string;
+    heightmobile?:string;
   }
+
   

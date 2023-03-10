@@ -37,10 +37,10 @@ const Footerc = () => {
         topmobile="11%"
       
       >
-        <LinkFooter href="#">Instagram</LinkFooter>
-        <LinkFooter href="#">Facebook</LinkFooter>
-        <LinkFooter href="#">YouTube</LinkFooter>
-        <LinkFooter href="#">Linkedin</LinkFooter>
+        <LinkFooter href="https://www.instagram.com/stev_hernandez28/">Instagram</LinkFooter>
+        <LinkFooter href="https://www.facebook.com/profile.php?id=100083817818897">Facebook</LinkFooter>
+        <LinkFooter href="https://www.youtube.com/channel/UCFDZymHX92hQtwLS2Y8DooQ">YouTube</LinkFooter>
+        <LinkFooter href="https://www.linkedin.com/in/steven-manuel-hernandez-gonzalez/">Linkedin</LinkFooter>
       </FlexContainer>
 
       <FlexContainer
@@ -59,8 +59,8 @@ const Footerc = () => {
         leftmobile = "5%"
         topmobile="-40%"
       >
-        <LinkFooter href="#">Donate</LinkFooter>
-        <LinkFooter href="#">Credits</LinkFooter>
+        <LinkFooter href="#donate">Donate</LinkFooter>
+        <LinkFooter href="#home">Credits</LinkFooter>
       </FlexContainer>
 
       <FlexContainer  width="50%" heigth="100%" widthmobile="70%" topmobile="-15%">
