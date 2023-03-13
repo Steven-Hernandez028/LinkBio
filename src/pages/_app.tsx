@@ -52,8 +52,8 @@ export default function App({ Component, pageProps }: AppProps) {
                     }
                 `}
             </style>
-            {loading ? <Loading/> : null}
-            <Component {...pageProps} />
+            {loading ? <Loading/> :      <Component {...pageProps} />}
+       
         </>
     );
 }

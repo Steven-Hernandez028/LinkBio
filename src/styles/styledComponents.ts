@@ -564,3 +564,6 @@ export const UnorderedList = styled(motion.ul)`
   left: -65px;
   width: 250px;
 `;
+
+export const LetterSpan = styled(motion.span)`
+`
