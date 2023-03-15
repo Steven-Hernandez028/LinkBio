@@ -25,17 +25,17 @@ const itemMenu = [
     {
         href: "#social",
         name: "Social Media",
-        initialY: -120,
+        initialY: -50,
     },
     {
         href: "#donate",
         name: "Donate",
-        initialY: -220,
+        initialY: -60,
     },
     {
         href: "#contact",
         name: "Contact Me",
-        initialY: -320,
+        initialY: -60,
     },
 ];
 
