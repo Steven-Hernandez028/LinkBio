@@ -1,0 +1,29 @@
+{
+    "todo-tree.tree.showBadges": false,
+    "todo-tree.general.tags": [
+        "TODO",
+        "[x]",
+        "[ ]",
+      ],
+      "todo-tree.highlights.customHighlight": {
+        "[x]":{
+          "foreground": "#64dd17",
+          "background":"#008800"
+        },
+        "[ ]":{
+          "foreground": "#f44336",
+          "background": "#592c2c",
+        },
+      },
+      "todo-tree.filtering.excludeGlobs": [
+        "**/node_modules/**",
+        "**/dist/**",
+        "**/bower_components/**",
+        "**/build/**",
+        "**/.vscode/**",
+        "**/.github/**",
+        "**/_output/**",
+        "**/*.min.*",
+        "**/*.map"
+    ]
+}

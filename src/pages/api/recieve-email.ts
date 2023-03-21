@@ -46,11 +46,13 @@ async function recieveEmail(req :NextApiRequest,res:NextApiResponse){
             </body>
             </html>`,
         })
+
+       return res.status(200).json({ sucess:"Ok"})
     }catch(error : any){
         return res.status(error.statusCode || 500).json({error:error.message})
     }
 
-    return res.status(200).json({error:""});
+  
 }
 
 export default recieveEmail;

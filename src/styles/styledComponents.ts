@@ -160,8 +160,8 @@ export const Logo = styled(motion.h3)<LogoProps>`
 `;
 export const RoundBox = styled(motion.div)`
   position: relative;
-  width: 90%;
-  height: 90%;
+  width: 80%;
+  height: 80%;
   left: 6%;
   overflow: hidden;
   border-radius: 16% 14% 45% 95% / 27% 52% 48% 23%;
@@ -237,7 +237,7 @@ export const SideTitle = styled(Title)`
 export const Description = styled(motion.p)<PropsDescription>`
   position: ${(props) => props.position || "relative"};
   text-align: ${(props) => props.textalign || "center"};
-  bottom: ${(props) => props.bottom || "25%"};
+  bottom: ${(props) => props.bottom || "20%"};
   width: ${(props) => props.width || "auto"};
   font-family: ${INCOSOLATA_PARRAGRAH};
 
@@ -246,16 +246,20 @@ export const Description = styled(motion.p)<PropsDescription>`
   margin-right: 4%;
   line-height: 1.8rem;
   color: white;
+  @media(max-width:1080px){
+    bottom:${(props)=>props.bottommedia || "25%"};
+  }
   @media (max-width: 1100px) {
     font-size: 2vmin;
   }
   @media (max-width: 600px) {
     position: relative;
-    font-size: 4vmin;
+    font-size: ${PARRAGRAH_FONT_SIZE};
     bottom: ${(props) => props.bottommobile || "25%"};
     text-align: justify;
     margin: ${(props) => props.marginmobile};
   }
+
 `;
 
 
@@ -283,8 +287,7 @@ export const CardWrapper = styled(motion.div)`
      }
   }
 `;
-//  border: 1px solid ${COLOR_ICON};
-//  border: 1px solid ${COLOR_ICON};
+
 
 export const Card = styled(motion.a)<CardProps>`
   display: block;
@@ -300,12 +303,16 @@ export const Card = styled(motion.a)<CardProps>`
   flex-direction: column;
   justify-content: space-around;
   box-shadow: -4px 0px 15px -7px rgb(255, 111, 0, 0.4);
+  transform: scale(0);
   transition: all 0.3s ease-in-out;
 
   &:active {
     box-shadow: -4px 0px 20px -7px rgb(190, 10, 0, 0.9);
   }
-
+  &:hover{
+    box-shadow: -4px 0px 20px -7px rgb(255, 111, 0, 0.9);
+    transform: scale(1.5);
+  }
   @media (max-width: 600px) {
     max-width: 60vw;
     max-height: 40vh;
@@ -363,12 +370,12 @@ export const DonateButton = styled(motion.a)<ButtonProps>`
   font-size: 2vmin;
   border: none;
   padding: 5px;
-  transition: all 0.1s ease-in;
+  transition: all 0.5s ease-in;
 
-  &:active {
-    background: #424;
+  &:hover{
+    background:#7200F5;
+    border-radius: 5px 0 5px 0;
   }
-
   @media (max-width: 600px) {
     position: relative;
     font-size: 4vmin;
@@ -390,8 +397,12 @@ export const Button = styled(motion.button)<ButtonProps>`
   font-size: 2vmin;
   border: none;
   padding: 5px;
-  transition: all 0.1s ease-in;
+  transition: all 0.5s ease-in;
 
+  &:hover{
+    background:#7200F5;
+    border-radius: 5px 0 5px 0;
+  }
   &:active {
     background: #424;
   }
@@ -403,7 +414,13 @@ export const Button = styled(motion.button)<ButtonProps>`
   }
 `;
 
+export const Images = styled.image`
+  position:absolute;
+  width:100%;
+  height:100%;
+  object-fit:fill;
 
+`
 export const Form = styled(motion.form)<FormProps>`
   position: relative;
   display: flex;
@@ -427,7 +444,7 @@ export const Form = styled(motion.form)<FormProps>`
  
   }
 `;
-
+//  box-shadow: -4px 0px 15px -7px rgb(255, 111, 0, 0.4);
 export const InputText = styled(motion.input)<ButtonProps>`
   position: relative;
   border-bottom: 0.5px solid ${COLOR_INPUT_TEXT};
@@ -444,7 +461,11 @@ export const InputText = styled(motion.input)<ButtonProps>`
   font-family: ${INCOSOLATA_PARRAGRAH};
   margin-bottom: 10%;
   margin-left: ${(props) => props.marginleft || "10%"};
+  transition: all .5s ease;
 
+  &:focus{
+    box-shadow: 0px 10px 15px -7px rgba(9, 240, 255,.4);
+  }
   @media (max-width: 600px) {
     width: 70%;
     margin:0px;
@@ -471,7 +492,11 @@ export const Textarea = styled(motion.textarea)`
   margin-left: 10%;
   position: relative;
   border-bottom: 0.5px solid ${COLOR_INPUT_TEXT};
+  transition: all .5s ease;
 
+  &:focus{
+    box-shadow: 0px 10px 15px -7px rgba(9, 240, 255,.4);
+  }
   @media (max-width: 600px) {
     max-width: 70%;
     min-width: 70%;

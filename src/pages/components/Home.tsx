@@ -1,4 +1,4 @@
-import useWindow from "@/helper/useWindow";
+
 import {
     Description,
     FlexContainer,
@@ -66,7 +66,6 @@ const Menu = () => {
     );
 };
 const Home = () => {
-    const [width, height] = useWindow();
     const [isBreathing, setIsBreathing] = useState<boolean>(true);
 
     useEffect(() => {
@@ -77,15 +76,7 @@ const Home = () => {
         return () => clearInterval(interval);
       }, []);
 
-    const fixDescription = (width: number) => {
-        if (width <= 1000 && width > 600) {
-            return "10%";
-        } else if (width > 710 && width < 1140) {
-            return "10%";
-        } else {
-            return "25%";
-        }
-    };
+
     const variants = {
         initial: {
             y: -50,
@@ -201,15 +192,15 @@ const Home = () => {
                             animate="animate"
                           
                         >
+                        
                             <span style={Styles.vowel[0]}>M</span>
                             <span style={Styles.vowel[1]}>y</span> LinkBio
                         </Title>
-                        {/* <span style={Styles.vowel[0]}>M</span>
-<span style={Styles.vowel[1]}>y</span> LinkBio */}
+
                         <Description
                             bottommobile="0px"
                             marginmobile="0 4% 0 4%"
-                            bottom={fixDescription(width)}
+                            bottommedia="25%"
                             textalign="none"
                             variants={variants2}
                             initial="initial"

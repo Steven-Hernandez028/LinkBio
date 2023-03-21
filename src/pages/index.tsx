@@ -6,6 +6,7 @@ import { useState, useRef } from "react";
 import { Canvas, extend, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial, Stats } from "@react-three/drei";
 import LinkBio from "./components/LinkBio";
+
 extend(THREE);
 
 export default function Webpage() {
@@ -100,11 +101,11 @@ export default function Webpage() {
                     name="viewport"
                     content="width=device-width, initial-scale=1"
                 />
-                {/* <link rel="icon" href="/favicon.ico" /> */}
+
             </Head>
 
             <main style={{ overflow: "hidden", position: "relative" }}>
-                <Canvas
+          <Canvas
                     style={{
                         width: "100vw",
 
@@ -122,8 +123,9 @@ export default function Webpage() {
                         color="#fff"
                         groundColor="blue"
                     />
-                </Canvas>
-                <LinkBio />
+                </Canvas> 
+              
+                 <LinkBio /> 
             </main>
         </>
     );

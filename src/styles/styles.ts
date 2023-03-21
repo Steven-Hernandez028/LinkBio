@@ -4,18 +4,15 @@ import useWindow from "@/helper/useWindow";
 //variablesFontsSize   Desktop - Tablet
 export const PARRAGRAH_FONT_SIZE = "3vmin";
 export const FOOTER_FONT_SIZE = "1em";
-export const MENU_FONT_SIZE = "1.2em";
+export const MENU_FONT_SIZE = "1em";
 export const LOGO_FONT_SIZE = "2em";
-export const TITLE_FONT_SIZE = "9vmin";
+export const TITLE_FONT_SIZE = "7vmin";
 export const SUBTITLE_FONT_SIZE = "6vmin";
 export const BUYMEACOFFEE_FONT_SIZE = "6vmin";
 
 //variableFontsSize Mobile
 export const MOBILE_TITLE_FONT_SIZE = "12vmin";
 export const MOBILE_SUBTITLE_FONT_SIZE = "10vmin";
-
-
-
 export const MOBILE_PARRAGRAH_FONT_SIZE = "3vmin"
 //COLORS
 export const BACKGROUND_COLOR="#060958";
@@ -42,7 +39,7 @@ export const Styles  = {
   imageContact:{
     position:"absolute",
     objectFit:"cover",
-    
+    objectPosition:"center center"
   },
   vowel: [{ color: `${COLOR_PRIMARY}` }, { color: `${COLOR_SECONDARY}` }],
   icons: [
@@ -90,8 +87,8 @@ export const Styles  = {
       top: '50%',
       left: '50%',
       right:'auto',
-      width:"50%",
-      height:"30%",
+      width:"30%",
+      height:"40%",
       bottom: 'auto',
       overflow:"hidden",
       marginRight: '-50%',

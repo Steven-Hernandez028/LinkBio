@@ -41,6 +41,7 @@ export interface PropsContainer {
     bottommobile?:string;
     textalign?:string;
     marginmobile?:string;
+    bottommedia?:string;
 
   }
 export interface FormProps{

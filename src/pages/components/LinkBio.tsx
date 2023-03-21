@@ -117,7 +117,7 @@ const LinkBio = () => {
   };
   return (
     <>
-      <Home />
+      <Home /> 
 
       <SocialMedia/>
       <BannerDonate handleModal={handleModal} />

@@ -6,7 +6,7 @@ import {
   Textarea,
   Form,
   Section,
-  SideTitle,
+  SideTitle
 } from "@/styles/styledComponents";
 import { Styles } from "@/styles/styles";
 import Image from "next/image";
@@ -35,10 +35,13 @@ const ContactMe = () => {
       method:"POST"
     })
 
-    const {error} = await res.json();
-
-    if(error){
-      console.log(error);
+    const {sucess} = await res.json();
+    const data = JSON.stringify(sucess)
+    if(sucess === "Ok"){
+      console.log('oks')
+      setEmail("");
+      setMessage("");
+      setSubject("");
       return;
     }
 
@@ -81,14 +84,18 @@ const ContactMe = () => {
           flexdirectionmobile="column"
         >
           <Form onSubmit={(e)=>handleSubmit(e)}>
-            <FlexContainer displaymobile="none" width="40%" heigth="100%">
+          <FlexContainer  displaymobile="none" width="40%" heigth="100%">
               <Image
-                priority
+                priority = {false}
                 fill
+               
                 alt="contact"
                 sizes="100%"
                 src="https://i.ibb.co/7QzjNGR/Tiger-XV-a-pixel-art-of-a-interstellar-black-hole-4k-dde3f792-0691-45b4-a445-176b8f51460f.png"
                 style={Styles.imageContact}
+                
+                
+
               />
             </FlexContainer>
 
@@ -105,12 +112,16 @@ const ContactMe = () => {
               alignitemsmobile="center"
             >
               <Label  left="10%">Email:</Label>
-              <InputText onChange={(e)=>{
+              <InputText     value={email} onChange={(e)=>{
+ 
                 setEmail(e.target.value)
-              }} top="0%" type="text" />
+              }} 
+         
+              top="0%" type="text" />
 
               <Label  left="10%">Subject:</Label>
               <InputText 
+                value={subject}
                 onChange={(e)=>{
                   setSubject(e.target.value)
                 }}
@@ -118,7 +129,7 @@ const ContactMe = () => {
 
               <Label left="10%">Message:</Label>
 
-              <Textarea onChange={(e)=>{
+              <Textarea     value={message}  onChange={(e)=>{
                 setMessage(e.target.value)
               }}/>
               <Button top="89%" type="submit">
